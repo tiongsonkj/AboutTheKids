@@ -1,0 +1,9 @@
+* {
+    background-image: url(../../img/jumbotron2.jpg);
+    background-size: cover;
+}
+
+form > input {
+    background-color: white;
+    margin: auto;
+}
