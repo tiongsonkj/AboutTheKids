@@ -1,0 +1,48 @@
+/* *****************************
+    Navbar
+********************************* */
+nav {
+    background-color: rgb(254, 198, 57);
+    padding-top: 1 rem;
+    padding-bottom: 1 rem;
+    font-weight: 700;
+
+}
+.navtext {
+    color: black;
+}
+#mainNav .navbar-nav {
+    margin-top: 1rem;
+    letter-spacing: 0.0625rem;
+}
+#mainNav .navbar-nav li.nav-item a.nav-link.active {
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+}
+
+/* *****************************
+    Jumbotron
+********************************* */
+.jumbotron {
+    color: white;
+    height: 60vmax;
+    background-image: url(../img/jumbotron2.jpg);
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: 0px;
+}
+.btn-xl {
+    padding: 1rem 2rem;
+}
+.btn {
+    font-weight: 700;
+    border: none;
+    border-radius: 300px;
+    vertical-align: middle;
+}
+hr {
+    max-width: 50px;
+    border-width: 3px;
+    border-color: goldenrod;
+}
