@@ -19,7 +19,24 @@
     <link rel="stylesheet" type="text/css" media="screen" href="tsstyle.css"/>
 </head>
 <body>
-    <div>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">About The Kids</a>
+
+        <div class="navbar-collapse collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto justify-content-end">
+                <li class="navtext nav-item px-2">
+                    <a class="nav-link active" href="pages/teacherstudent/teacherstudent.html">Create Account</a>
+                </li>
+                <li class="navtext nav-item px-2">
+                    <a class="nav-link active" href="#portfolio">Sign In</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mentor or student? -->
+    <div id="mainDiv">
         <p><strong>Are you a mentor or a student?</strong></p>
         <button type="button" class="btn btn-outline-success" onclick="location.href='./mentorform/mentorform.html';">Mentor</button>
         <button type="button" class="btn btn-outline-success">Student</button>

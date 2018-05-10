@@ -4,9 +4,9 @@ body {
     background-repeat: no-repeat;
 }
 
-div {
+#mainDiv {
     position: fixed;
-    margin-top: 30%;
+    margin-top: 25%;
     margin-left: 45%;
 }
 
