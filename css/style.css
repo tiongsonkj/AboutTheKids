@@ -25,6 +25,8 @@ nav {
     Jumbotron
 ********************************* */
 .jumbotron {
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
     color: white;
     height: 60vmax;
     background-image: url(../img/jumbotron2.jpg);
@@ -44,5 +46,5 @@ nav {
 hr {
     max-width: 50px;
     border-width: 3px;
-    border-color: goldenrod;
+    border-color: rgb(206, 0, 0);
 }
