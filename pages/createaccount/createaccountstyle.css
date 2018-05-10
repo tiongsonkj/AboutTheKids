@@ -3,7 +3,10 @@
     background-size: cover;
 }
 
-form > input {
+form div {
     background-color: white;
+    margin: auto;
+}
+form > button {
     margin: auto;
 }
