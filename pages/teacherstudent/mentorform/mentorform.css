@@ -4,7 +4,15 @@ body {
     background-repeat: no-repeat;
 }
 
+form {
+    margin-top: 10%;
+}
+
 button {
-    margin: auto;
-    left: 50%;
+    margin-left: 26%;
+}
+
+form div label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
 }
