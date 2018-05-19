@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sample Teacher</title>
+    <title>Sample Student</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
 
@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:800" rel="stylesheet">
 
     <!-- style sheet -->
-    <link rel="stylesheet" type="text/css" media="screen" href="sampleteacher.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="samplestudent.css"/>
 </head>
 <body>
     <!-- navbar -->
@@ -37,7 +37,7 @@
         <div class="navbar-collapse collapse" id="navbarResponsive">
             <li class="nav-item dropdown ml-auto justify-content-end">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Hi, John!
+                    Hi, Jane!
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="#">Action</a>
@@ -53,8 +53,41 @@
     <div class="container">
         <div class="row">
 
-            <!-- Teacher Info Card -->
-            <div class="card col-md-6 mt-5 ml-3">
+            <!-- Student Info Card -->
+            <div class="card col-md-5 ml-3 pb-5 mt-5">
+                <div class="card-header">
+                        Student Profile
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <!-- image section -->
+                        <div class="col-md-3">
+                            <img height="100px" src="../../../../../img/icon.png" alt="temporary profile photo">
+                        </div>
+                        <!-- info section -->
+                        <div class="col-md-8">
+                            <p>Jane Doe</p>
+                            <hr>
+                            <p>jdoe1871@students.d211.org</p>
+                            <hr>
+                        </div>
+
+                        <!-- section below other sections -->
+                        <div class="col-md-10">
+                            <p>1000 S. Quentin Rd, Palatine, IL 60067</p><hr>
+                            <a href="#calendar">Link to Calendar</a><hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- empty div block for spacing -->
+            <div class="col-md-1">
+
+            </div>
+
+            <!-- Student's Mentor Info Card -->
+            <div class="card col-md-5 mt-5 ml-3">
                 <div class="card-header">
                     Mentor (Fremd High School)
                 </div>
@@ -62,7 +95,7 @@
                     <div class="row">
                         <!-- picture section -->
                         <div class="col-md-4">
-                            <img width="150px" height="200px" src="../../../../../img/mentorheadshot.jpg" alt="profile pic">
+                            <img width="125px" height="175px" src="../../../../../img/mentorheadshot.jpg" alt="profile pic">
                         </div>
     
                         <!-- info section -->
@@ -74,22 +107,12 @@
                             <hr>
                             <p>847-755-2600</p>
                         </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Teacher Profile -->
-            <div class="card col-md-10 ml-3 pb-5 mt-3">
-                <div class="card-header">
-                        Profile
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        <!-- info section -->
-                        <div class="col-md-8">
-                            Teacher
-
-                            <a href="../teacherlist/teacherlist.html">Link to list of students</a>
+                        <!-- more info section -->
+                        <div class="col-md-10">
+                            <hr>
+                            <a href="../../../../sampleteacherschedule/sampleschedule.html">Mr. Doe's Class Schedule</a>
+                            <hr>
                         </div>
                     </div>
                 </div>
