@@ -16,22 +16,28 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- tab icon -->
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
 </head>
 <body>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">About The Kids</a>
+        <div class="navbar-brand" id="navbrand">
+            <img src="img/logo-2.png" alt="logo" class="">
+            <a class="navtext navbar-link" href="#">About The Kids</a>
+        </div>
 
          <!-- this is the button for when the page shrinks (hamburger) -->
          <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
         <div class="navbar-collapse collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto justify-content-end">
-                <li class="navtext nav-item px-2">
-                    <a class="nav-link active" href="pages/teacherstudent/teacherstudent.html">Create Account</a>
+                <li class="nav-item px-2">
+                    <a class="navtext navbar-link" href="pages/teacherstudent/teacherstudent.html">Create Account</a>
                 </li>
-                <li class="navtext nav-item px-2">
-                    <a class="nav-link active" href="pages/teacherstudent/teacherstudent.html">Sign In</a>
+                <li class="nav-item px-2">
+                    <a class="navtext navbar-link" href="pages/teacherstudent/teacherstudent.html">Sign In</a>
                 </li>
             </ul>
         </div>
@@ -41,19 +47,32 @@
     <div class="jumbotron jumbotron-fluid">
         <div class="container my-auto">
             <div class="row">
-                <div class="col-lg-10 mx-auto pt-5">
+                <div class="col-lg-7 mx-auto pt-5">
                     <br>
                     <br>
-                    <h1 class="text-center text-uppercase"><strong>About The Kids</strong></h1>
-                    <hr>
+                    <div class="row">
+                        <p class="title-text text-uppercase"><strong>About</strong></p>
+                    </div>
+                    <div class="row">
+                        <p class="title-text text-uppercase">The Kids</p>
+                    </div>
+                    
+                </div>
+                <div id="cal-col" class="col-lg-5">
+                    <h1><strong>Events</strong></h1>
+                    <img id="calendar" src="img/2018-calendar.jpg" alt="Interactive Calendar">
                 </div>
             </div>
+
+            
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row quote">
+            <h1>"A mentor is someone who allows you to see the hope inside yourself."</h1>
         </div>
     </div>
 
 </body>
-
-<script>
-    console.log("Hey guys!")
-</script>
 </html>
