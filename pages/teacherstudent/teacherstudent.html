@@ -17,29 +17,42 @@
 
     <!-- style sheet -->
     <link rel="stylesheet" type="text/css" media="screen" href="tsstyle.css"/>
+
+      <!-- tab icon -->
+      <link rel="shortcut icon" type="image/png" href="../../img/favicon.png">
 </head>
 <body>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="../../index.html">About The Kids</a>
+        <div class="navbar-brand" id="navbrand">
+            <img src="../../img/logo-2.png" alt="logo" class="">
+            <a class="navtext navbar-link" href="../../index.html">About The Kids</a>
+        </div>
+
+            <!-- this is the button for when the page shrinks (hamburger) -->
+            <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
         <div class="navbar-collapse collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto justify-content-end">
-                <li class="navtext nav-item px-2">
-                    <a class="nav-link active" href="pages/teacherstudent/teacherstudent.html">Create Account</a>
+                <li class="nav-item px-2">
+                    <a class="navtext navbar-link" href="pages/teacherstudent/teacherstudent.html">Create Account</a>
                 </li>
-                <li class="navtext nav-item px-2">
-                    <a class="nav-link active" href="#portfolio">Sign In</a>
+                <li class="nav-item px-2">
+                    <a class="navtext navbar-link" href="pages/teacherstudent/teacherstudent.html">Sign In</a>
                 </li>
             </ul>
         </div>
     </nav>
 
     <!-- Mentor or student? -->
-    <div id="mainDiv">
-        <p><strong>Are you a mentor or a student?</strong></p>
-        <button type="button" class="btn btn-dark" onclick="location.href='./mentorform/mentorform.html';">Mentor</button>
-        <button type="button" class="btn btn-dark" onclick="location.href='./studentform/studentform.html';">Student</button>
-    </div>
+    <section id="mainDiv">
+        <p><strong>Are you a</strong></p>
+
+        <p><a href="./mentorform/mentorform.html" class="pg-link">mentor</a></p>
+        
+        <p>or</p>
+        
+        <a href="./studentform/studentform.html" class="pg-link">student</a>
+    </section>
 </body>
 </html>
