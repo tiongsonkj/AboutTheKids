@@ -1,0 +1,76 @@
+body {
+    background-image: url(../../img/jumbotron2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* *****************************
+    Navbar
+********************************* */
+nav {
+    background-color: rgb(254, 198, 57);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-weight: 700;
+
+}
+.navtext {
+    color: black;
+}
+#mainNav .navbar-nav {
+    margin-top: 1rem;
+    letter-spacing: 0.0625rem;
+}
+#mainNav .navbar-nav li.nav-item a.nav-link.active {
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+}
+
+nav div img {
+    height: 50px;
+    margin-top: -1rem;
+}
+
+.navtext {
+    font-size: 2rem;
+}
+
+.navtext:hover {
+    color: red;
+    text-decoration: none;
+}
+
+.navtext:not(:last-child) {
+    margin-right: 1rem;
+}
+
+.nav-item {
+    margin-right: 1rem;
+}
+
+/* *****************************
+    Divblock
+********************************* */
+#mainDiv {
+    margin: 15% 0;
+    text-align: center;
+    font-size: 375%;
+    font-weight: bold;
+}
+
+.pg-link {
+    border-radius: 100px;
+    background-color: rgba(92, 91, 91, 0.961);
+    color: white;
+    padding: 15px 40px;
+}
+
+.pg-link:hover {
+    text-decoration: none;
+    color: orangered;
+    
+    /* not working. not sure why */
+    /* transform: translateY(-1.5rem) scale(1.03);
+    box-shadow: 0 10px 20px rgba(black, .2); */
+}
