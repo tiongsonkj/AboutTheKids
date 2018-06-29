@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import './Home.css';
+import logo from './logo-2.png'
+import calendar from './2018-calendar.jpg';
 
 class Home extends Component{
     render(){
@@ -7,7 +9,7 @@ class Home extends Component{
             <div>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="navbar-brand" id="navbrand">
-                        <img src="img/logo-2.png" alt="logo" class=""/>
+                        <img src={logo} alt="logo" class=""/>
                         <a class="navtext navbar-link" href="#">About The Kids</a>
                     </div>
 
@@ -39,7 +41,7 @@ class Home extends Component{
                             </div>
                             <div id="cal-col" class="col-lg-5">
                                 <h1><strong>Events</strong></h1>
-                                <img id="calendar" src="img/2018-calendar.jpg" alt="Interactive Calendar"/>
+                                <img id="calendar" src={calendar} alt="Interactive Calendar"/>
                             </div>
                         </div>
                     </div>
