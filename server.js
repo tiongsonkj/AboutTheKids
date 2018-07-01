@@ -1,6 +1,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+
+// connecting to ROUTES
 // const routes = require("./routes");
+const mentors = require('./routes/api/mentors');
+
+// initializing express
 const app = express();
 const PORT = process.env.PORT || 8000;
 
