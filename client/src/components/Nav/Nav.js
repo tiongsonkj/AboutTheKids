@@ -5,7 +5,7 @@ class Nav extends Component {
     return (
       <div className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="navbar-brand" id="navbrand">
-            <img src="img/logo-2.png" alt="logo" className=""/>
+            <img src="../../img/logo-2.png" alt="logo" className=""/>
             <a className="navtext navbar-link" href="#">About The Kids</a>
         </div>
 

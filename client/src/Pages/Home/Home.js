@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import './Home.css';
-import logo from './logo-2.png'
-import calendar from './2018-calendar.jpg';
-import Nav from '../../components/Nav/Nav'
+import calendar from '../../assets/img/2018-calendar.jpg';
+import Nav from '../../components/Nav'
 
 class Home extends Component{
     render(){
