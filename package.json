@@ -1,0 +1,37 @@
+{
+  "name": "aboutthekids",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server \" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiongsonkj/AboutTheKids.git"
+  },
+  "author": "Kelvin Tiongson, Mike Barnd, Rooha Nasir, Darko Novakovic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tiongsonkj/AboutTheKids/issues"
+  },
+  "homepage": "https://github.com/tiongsonkj/AboutTheKids#readme",
+  "devDependencies": {
+    "express": "^4.16.3",
+    "mongojs": "^2.6.0"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "concurrently": "^3.6.0",
+    "jquery": "^3.3.1",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.1.5",
+    "morgan": "^1.9.0",
+    "mysql": "^2.15.0",
+    "nodemon": "^1.17.5"
+  }
+}
