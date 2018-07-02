@@ -1,0 +1,16 @@
+body {
+    background-image: url(../../assets/img/jumbotron2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#makementor{
+    margin-left: 45%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+form div label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+}

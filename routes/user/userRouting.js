@@ -9,7 +9,8 @@ router.post("/login", function(req, res) {
 });
 
 router.post("/signup", function(req, res) {
-    newUser(req.body.username, req.body.password, cb, res);
+    //newUser(req.body.username, req.body.password, cb, res);
+    res.send('Registered!')
   });
 
 router.get("/userAccount/:token", function(req, res){
