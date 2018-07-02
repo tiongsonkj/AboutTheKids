@@ -4,6 +4,23 @@ import calendar from '../../assets/img/2018-calendar.jpg';
 import Nav from '../../components/Nav'
 
 class Home extends Component{
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            votes: 0
+        }
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(event){
+        event.preventDefault();
+        this.setState({ 
+            votes: 11
+        });
+        console.log(this.state.votes);
+    }
+
     render(){
         return(
             <div>
