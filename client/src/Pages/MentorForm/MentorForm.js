@@ -19,7 +19,8 @@ class MentorForm extends Component {
     }
 
     onSubmit(){
-        console.log('Submitting');
+        //Add input validation
+        
         axios.post('http://localhost:8000/users/signup', {
                 firstName: this.state.firstName,
                 lastName: this.state.lastName,
