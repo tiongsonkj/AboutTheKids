@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import logo from '../../assets/img/logo-2.png';
+
 
 class Nav extends Component {
   render() {
     return (
       <div className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="navbar-brand" id="navbrand">
-            <img src="../../img/logo-2.png" alt="logo" className=""/>
+            <img src={logo} alt="logo" className=""/>
             <a className="navtext navbar-link" href="#">About The Kids</a>
         </div>
 
