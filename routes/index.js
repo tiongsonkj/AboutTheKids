@@ -4,7 +4,7 @@ const apiRoutes = require("./api");
 const userRoutes = require("./user");
 
 // API Routes
-router.use("/api", apiRoutes);
+//router.use("/api", apiRoutes);
 
 //Register and Sign-In Routes
 router.use("/users", userRoutes)
