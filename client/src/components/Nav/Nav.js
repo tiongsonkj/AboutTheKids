@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from '../../assets/img/logo-2.png';
+import { Link } from 'react-router-dom';
 
 
 class Nav extends Component {
@@ -8,7 +9,7 @@ class Nav extends Component {
       <div className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="navbar-brand" id="navbrand">
             <img src={logo} alt="logo" className=""/>
-            <a className="navtext navbar-link" href="#">About The Kids</a>
+            <Link className="navtext navbar-link" to="/">About The Kids</Link>
         </div>
 
          {/* <!-- this is the button for when the page shrinks (hamburger) --> */}
