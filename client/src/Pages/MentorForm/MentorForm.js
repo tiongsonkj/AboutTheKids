@@ -44,8 +44,6 @@ class MentorForm extends Component {
         this.setState({
             fields
         })
-
-        console.log(fields);
     }
 
     render() {

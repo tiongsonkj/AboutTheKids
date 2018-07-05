@@ -25,7 +25,9 @@
     "mongojs": "^2.6.0"
   },
   "dependencies": {
+    "bcrypt": "^2.0.1",
     "bcrypt-nodejs": "0.0.3",
+    "bcryptjs": "^2.4.3",
     "concurrently": "^3.6.0",
     "cors": "^2.8.4",
     "jquery": "^3.3.1",

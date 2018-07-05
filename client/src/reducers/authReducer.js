@@ -1,5 +1,5 @@
 import { SET_CURRENT_USER } from '../actions/types';
-import isEmpty from '../validation/is-empty';
+// import isEmpty from '../validation/is-empty';
 
 // initial state for reducer
 const initialState = {
@@ -12,7 +12,7 @@ export default function(state = initialState, action) {
         case SET_CURRENT_USER:
             return {
                 ...state,
-                isAuthenticated: !isEmpty(action.payload),
+                isAuthenticated: true, //will have to fix this so that it will validate if empty or not
                 user: action.payload
             };
         default:
