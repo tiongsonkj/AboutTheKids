@@ -58,6 +58,15 @@ class Nav extends Component {
 
             <div className="navbar-collapse collapse" id="navbarResponsive">
                 {/* {isAuthenticated ? authLinks : guestLinks} */}
+                {/* for now display these links,  */}
+                <ul className="navbar-nav ml-auto justify-content-end">
+                    <li className="nav-item px-2">
+                        <a className="navtext navbar-link" href="pages/teacherstudent/teacherstudent.html">Create Account</a>
+                    </li>
+                    <li className="nav-item px-2">
+                        <Link className="navtext navbar-link" to="/login">Sign In</Link>
+                    </li>
+                </ul>
             </div>
         </div>
         )

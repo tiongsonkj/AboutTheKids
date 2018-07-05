@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Nav from '../../components/Nav';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { loginUser } from '../../actions/authActions';
 import { withRouter } from 'react-router-dom';
@@ -15,16 +16,40 @@ class Login extends Component {
         };
 
         this.onChange = this.onChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if(nextProps.auth.isAuthenticated) {
+            this.props.history.push('/dashboard');
+        }
+
+
     }
 
     onChange(event) {
         event.preventDefault();
 
         let fields = this.state;
-        fields[event.target.id] = event.target.value;
+        fields[event.target.name] = event.target.value;
+    
         this.setState({
             fields
         })
+    }
+
+    onSubmit(e) {
+        e.preventDefault();
+
+        // field that will send to backend.
+        // this matches my validation/register.js page
+        // make sure fields match and spelled correctly
+        const userData = {
+            email: this.state.email,
+            password: this.state.password,
+        }
+        // calling in axios action from authAction.js
+        this.props.loginUser(userData);
     }
 
     render() {
@@ -52,7 +77,7 @@ class Login extends Component {
                                 className='form-control form-control-lg'
                                 placeholder="Password" 
                                 name="password" 
-                                value={this.state.email}
+                                value={this.state.password}
                                 onChange={this.onChange}
                             />
                         </div>
@@ -66,8 +91,13 @@ class Login extends Component {
     }
 };
 
-const mapStateToProps = state => ({
-    auth: state.auth
-})
+Login.propTypes = {
+    loginUser: PropTypes.func.isRequired
+    // auth: PropTypes.object
+}
 
-export default connect(mapStateToProps, { loginUser })(withRouter(Login));
+// const mapStateToProps = state => ({
+//     auth: state.auth
+// })
+
+export default connect(null, { loginUser })(withRouter(Login));

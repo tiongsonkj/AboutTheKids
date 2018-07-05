@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require('cors');
 const routes = require("./routes");
+const passport = require('passport');
 
 // CONNECTING TO ROUTES
 // const routes = require("./routes");
@@ -28,6 +29,13 @@ mongoose
     .connect(db)
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.log(err));
+
+
+// Passport middleware
+app.use(passport.initialize());
+
+// Passport Config 
+require('./config/passport')(passport);
 
 // USE ROUTES
 // both API and view route

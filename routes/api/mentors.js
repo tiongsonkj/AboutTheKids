@@ -3,6 +3,12 @@ const express = require('express');
 const router = express.Router();
 const keys = require('../../config/keys');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const passport = require('passport');
+
+// load in validations
+const validateRegisterInput = require('../../validation/register');
+const validateLoginInput = require('../../validation/login');
 
 // load model
 const Mentor = require('../../models/Mentor');
@@ -11,12 +17,20 @@ const Mentor = require('../../models/Mentor');
 // @desc    register mentor
 // @access  Public
 router.post("/register", (req, res) => {
+     // pull out errors and isvalid from function we just brought in
+     const { errors, isValid } = validateRegisterInput(req.body);
+
+    // check validation
+    if(!isValid) {
+        return res.status(400).json({ errors });
+    }
 
     Mentor.findOne({ email: req.body.email })
-        .then(user => {
-            if(user) {
+        .then(mentor => {
+            if(mentor) {
                 // if mentor exists, send error
-                return res.status(400).json({ error: 'Email already exists' });
+                errors.email = 'Email already exists';
+                return res.status(400).json(errors);
             } else {
                 // else create new Mentor
                 const newMentor = new Mentor({
@@ -32,10 +46,10 @@ router.post("/register", (req, res) => {
                     bcrypt.hash(newMentor.password, salt, (err, hash) => {
                         if(err) throw err;
 
-                        // setting newUser password to hash, hash is what we want
+                        // setting newmentor password to hash, hash is what we want
                         newMentor.password = hash;
                         newMentor.save()
-                            .then(user => res.json(user)) //send back successful response of user
+                            .then(mentor => res.json(mentor)) //send back successful response of user
                             .catch(err => console.log(err));
                     })
                 })
@@ -60,6 +74,14 @@ router.get('/all', (req, res) => {
 // @desc    login mentor
 // @access  Public
 router.post('/login', (req, res) => {
+    // pull out errors and isvalid from function we just brought in
+    const { errors, isValid } = validateLoginInput(req.body);
+
+    // check validation
+    if(!isValid) {
+        return res.status(400).json({ errors });
+    }
+
     const email = req.body.email;
     const password = req.body.password;
 
@@ -70,7 +92,7 @@ router.post('/login', (req, res) => {
             console.log(typeof password);
 
             if(!mentor) {
-                return res.status(404).json({error: "User not found"});
+                return res.status(404).json({error: "Mentor not found"});
             }
 
             // check password
@@ -82,11 +104,13 @@ router.post('/login', (req, res) => {
 
                         // user matched
                         
-                        const payload = { id: user.id, name: user.name, avatar: user.avatar } //create jwt payload
+                        const payload = { id: mentor.id, name: mentor.first_name} //create jwt payload
+                        console.log(payload);
 
+                        // implement jwt at a later time
                         // sign token
                         // payload is what we want to include in the token
-                        // third parameter is time the key expires (ep 12)
+                        // third parameter is time the key expires
                         jwt.sign(
                             payload, 
                             keys.secretOrKey, 
@@ -102,5 +126,18 @@ router.post('/login', (req, res) => {
                     }
                 });
         });
+});
+
+// @route   GET api/mentors/current
+// @desc    Return current mentor
+// @access  Private
+router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
+    console.log(req);
+    res.json({
+        id: req.user._id,
+        first_name: req.user.first_name,
+        last_name: req.user.last_name,
+        email: req.user.email
+    });
 });
 module.exports = router;

@@ -28,6 +28,7 @@
     "bcrypt": "^2.0.1",
     "bcrypt-nodejs": "0.0.3",
     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
     "concurrently": "^3.6.0",
     "cors": "^2.8.4",
     "jquery": "^3.3.1",
@@ -36,6 +37,9 @@
     "morgan": "^1.9.0",
     "mysql": "^2.15.0",
     "nodemon": "^1.17.5",
-    "set-default-browser": "^1.0.1"
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "set-default-browser": "^1.0.1",
+    "validator": "^10.4.0"
   }
 }
