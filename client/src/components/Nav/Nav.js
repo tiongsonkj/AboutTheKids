@@ -21,7 +21,7 @@ class Nav extends Component {
                     <a className="navtext navbar-link" href="pages/teacherstudent/teacherstudent.html">Create Account</a>
                 </li>
                 <li className="nav-item px-2">
-                    <a className="navtext navbar-link" href="pages/teacherstudent/teacherstudent.html">Sign In</a>
+                    <Link className="navtext navbar-link" to="/login">Sign In</Link>
                 </li>
             </ul>
         </div>
