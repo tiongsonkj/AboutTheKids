@@ -3,11 +3,24 @@ import setAuthToken from '../utils/setAuthToken';
 import jwt_decode from 'jwt-decode';
 import { GET_ERRORS, SET_CURRENT_USER } from './types';
 
+// register action
+// we are putting this into our redux state
+export const registerUser = (mentorData, history) => dispatch => {
+    axios.post('/api/mentors/register', mentorData)
+        .then(res => history.push('/login')) //goes to login if register is successful
+        .catch(err =>
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data //send payload which is the error response
+            })
+        )
+}   
+
 // log in action
 export const loginUser = userData => dispatch => {
     // '/login' is the route that gets the token
     // pass in userData
-    axios.post('/api/users/login', userData)
+    axios.post('/api/mentors/login', userData)
         .then(res => {
             
             const { token } = res.data;

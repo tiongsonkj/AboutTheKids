@@ -1,10 +1,11 @@
 import { SET_CURRENT_USER } from '../actions/types';
-// import isEmpty from '../validation/is-empty';
+import isEmpty from '../validation/is-empty';
 
 // initial state for reducer
+// this is what we will see in redux dev tool. In the 'State' tab
 const initialState = {
     isAuthenticated: false,
-    user: {}
+    mentor: {}
 };
 
 export default function(state = initialState, action) {
@@ -12,10 +13,10 @@ export default function(state = initialState, action) {
         case SET_CURRENT_USER:
             return {
                 ...state,
-                isAuthenticated: true, //will have to fix this so that it will validate if empty or not
-                user: action.payload
+                isAuthenticated: !isEmpty(action.payload), //will have to fix this so that it will validate if empty or not
+                mentor: action.payload
             };
         default:
             return state;
     }
-}
+};

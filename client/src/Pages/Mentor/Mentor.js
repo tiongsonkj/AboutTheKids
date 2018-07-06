@@ -65,7 +65,7 @@ class MentorForm extends Component {
                                 </div>
             
                                 <div class="col-md-8">
-                                    <p>John Doe, <a href="#">jdoe@d211.org</a></p>
+                                    <p>John Doe, <a>jdoe@d211.org</a></p>
                                     <hr/>
                                     <p>1000 S. Quentin Rd,</p>
                                     <p>Palatine, IL 60067</p>

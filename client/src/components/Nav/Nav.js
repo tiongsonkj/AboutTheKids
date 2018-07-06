@@ -15,36 +15,36 @@ class Nav extends Component {
     render() {
         // const { isAuthenticated, user } = this.props.auth;
 
-        const authLinks = (
-            <ul className="navbar-nav ml-auto">
-                <li className="nav-item">
-                {/* dont need <Link> because page will not be going anywhere */}
-                <a 
-                        href="" 
-                        onClick={this.onLogoutClick.bind(this)} 
-                        className="nav-link">
-                        <img 
-                            className="rounded-circle"
-                            // src={user.avatar} 
-                            // alt={user.name}
-                            style={{ width: '25px', marginRight: '5px' }}
-                            title="You must have a Gravatar connected to your email to display an image"/>
-                        Logout
-                    </a>
-                </li>
-            </ul>
-        );
+        // const authLinks = (
+        //     <ul className="navbar-nav ml-auto">
+        //         <li className="nav-item">
+        //         {/* dont need <Link> because page will not be going anywhere */}
+        //         <a 
+        //                 href="" 
+        //                 onClick={this.onLogoutClick.bind(this)} 
+        //                 className="nav-link">
+        //                 <img 
+        //                     className="rounded-circle"
+        //                     // src={user.avatar} 
+        //                     // alt={user.name}
+        //                     style={{ width: '25px', marginRight: '5px' }}
+        //                     title="You must have a Gravatar connected to your email to display an image"/>
+        //                 Logout
+        //             </a>
+        //         </li>
+        //     </ul>
+        // );
 
-        const guestLinks = (
-            <ul className="navbar-nav ml-auto justify-content-end">
-                <li className="nav-item px-2">
-                    <a className="navtext navbar-link" href="pages/teacherstudent/teacherstudent.html">Create Account</a>
-                </li>
-                <li className="nav-item px-2">
-                    <Link className="navtext navbar-link" to="/login">Sign In</Link>
-                </li>
-            </ul>
-        );
+        // const guestLinks = (
+        //     <ul className="navbar-nav ml-auto justify-content-end">
+        //         <li className="nav-item px-2">
+        //             <a className="navtext navbar-link" href="pages/teacherstudent/teacherstudent.html">Create Account</a>
+        //         </li>
+        //         <li className="nav-item px-2">
+        //             <Link className="navtext navbar-link" to="/login">Sign In</Link>
+        //         </li>
+        //     </ul>
+        // );
 
         return (
         <div className="navbar navbar-expand-lg navbar-light bg-light">

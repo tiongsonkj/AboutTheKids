@@ -1,6 +1,9 @@
-import { combineReducer } from 'redux';
+import { combineReducers } from 'redux';
 import authReducer from './authReducer';
+import errorReducer from './errorReducer';
 
-export default combineReducer({
-    auth: authReducer
-})
+// use anything from our authReducer in our components will use this.props.auth
+export default combineReducers({
+    auth: authReducer, 
+    errors: errorReducer
+});

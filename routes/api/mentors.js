@@ -19,6 +19,7 @@ const Mentor = require('../../models/Mentor');
 router.post("/register", (req, res) => {
      // pull out errors and isvalid from function we just brought in
      const { errors, isValid } = validateRegisterInput(req.body);
+     console.log(req.body);
 
     // check validation
     if(!isValid) {
