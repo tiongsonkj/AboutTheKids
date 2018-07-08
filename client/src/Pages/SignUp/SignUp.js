@@ -12,7 +12,7 @@ class Home extends Component{
                 <section id="mainDiv">
                     <p><strong>Are you a</strong></p>
 
-                    <Link to="/mentorform" className="pg-link">mentor</Link>
+                    <Link to="/register" className="pg-link">mentor</Link>
                     
                     <p>or</p>
                     

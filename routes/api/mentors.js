@@ -5,6 +5,7 @@ const keys = require('../../config/keys');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
+const gravatar = require('gravatar');
 
 // load in validations
 const validateRegisterInput = require('../../validation/register');
@@ -33,11 +34,19 @@ router.post("/register", (req, res) => {
                 errors.email = 'Email already exists';
                 return res.status(400).json(errors);
             } else {
+                // create gravatar
+                const avatar = gravatar.url(req.body.email, {
+                    s: '200',
+                    r: 'pg',
+                    d: 'mm'
+                });
+
                 // else create new Mentor
                 const newMentor = new Mentor({
                     first_name: req.body.first_name,
                     last_name: req.body.last_name,
                     email: req.body.email,
+                    avatar,
                     password: req.body.password,
                     school: req.body.school
                 });
@@ -105,7 +114,13 @@ router.post('/login', (req, res) => {
 
                         // user matched
                         
-                        const payload = { id: mentor.id, name: mentor.first_name} //create jwt payload
+                        //create jwt payload
+                        const payload = { 
+                            id: mentor.id, 
+                            first_name: mentor.first_name, 
+                            last_name: mentor.last_name,
+                            avatar: mentor.avatar
+                        } 
                         console.log(payload);
 
                         // implement jwt at a later time
