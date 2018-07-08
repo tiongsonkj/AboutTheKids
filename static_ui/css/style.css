@@ -125,6 +125,7 @@ p, h2, h3, h4, h5, h6 {
     color: black;
     display: inline-block;
     font-family: 'Carter One', cursive;
+    margin-bottom: 0;
     vertical-align: middle;
 }
 .navbar a {
@@ -169,6 +170,16 @@ blockquote p {
     width: 100%;
 }
 /*** END Index Page ***/
+.body-bg {
+    background-color: lightgray;
+}
+.title {
+    border-bottom: 1px solid #3c3c3c;
+}
+
+/*** Student Portal Page ***/
+
+/*** END Student Portal Page ***/
 
 
 /*** Media Query Less Than 1200 ***/
@@ -211,6 +222,9 @@ blockquote p {
     #cal-col h2 {
         margin-top: 20px;
         text-align: center;
+    }
+    .mtop {
+        padding-top: 1.5rem!important;
     }
 }
 
