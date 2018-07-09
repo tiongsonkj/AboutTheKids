@@ -11,7 +11,10 @@ class MentorDashboard extends Component {
     }
 
     render() {
-        const { user } = this.props.auth;
+        console.log(this.props);
+        const { mentor } = this.props.auth;
+        console.log(this.props.profile);
+        console.log(mentor);
         const { profile, loading } = this.props.profile;
        
         // initialize dashboard content variable
@@ -28,7 +31,7 @@ class MentorDashboard extends Component {
                 // User is logged in but has no profile
                 dashboardContent = (
                 <div>
-                    <p className="lead text-muted">Welcome { user.name }</p>
+                    <p className="lead text-muted">Welcome { mentor.first_name }</p>
                     <p>You have not yet setup a profile, please add some info</p>
                     <Link to="/create-profile" className="btn btn-lg btn-info">
                     Create Profile
@@ -65,4 +68,4 @@ const mapStateToProps = state => ({
     auth: state.auth
 });
 
-export default connect(mapStateToProps, { getCurrentProfile})(MentorDashboard);
+export default connect(mapStateToProps, { getCurrentProfile })(MentorDashboard);

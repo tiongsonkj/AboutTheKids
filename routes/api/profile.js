@@ -23,7 +23,7 @@ router.get('/test', (req, res) => res.json({msg: "Profile Works"}));
 // @access Private
 router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
     const errors = {};
-    console.log(req);
+    // console.log(req);
 
     // from Profile schema
     Profile.findOne({ mentor: req.user._id })

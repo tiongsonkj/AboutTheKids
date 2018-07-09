@@ -23,13 +23,13 @@ class Login extends Component {
     componentDidMount() {
         // if logged in
         if(this.props.auth.isAuthenticated) {
-            this.props.history.push('/dashboard'); //send to dashboard
+            this.props.history.push('/mentordashboard'); //send to dashboard
         }
     }
 
     componentWillReceiveProps(nextProps) {
         if(nextProps.auth.isAuthenticated) {
-            this.props.history.push('/dashboard');
+            this.props.history.push('/mentordashboard');
         }
 
         const errorObjLength = Object.keys(nextProps.errors).length;

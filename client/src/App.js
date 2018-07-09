@@ -16,6 +16,7 @@ import Mentor from './Pages/Mentor';
 import Login from './Pages/Login';
 import MentorDashboard from './Pages/MentorDashboard';
 import { logoutUser } from './actions/authActions';
+import { clearCurrentProfile } from './actions/profileActions';
 
 // import Mentor from './Pages/Mentor'
 // import Student from './Pages/Student'
@@ -45,6 +46,7 @@ if(localStorage.jwtToken) {
     store.dispatch(logoutUser());
 
     // TODO: clear current profile
+    store.dispatch(clearCurrentProfile());
 
     // Redirect to login
     window.location.href = '/login';
