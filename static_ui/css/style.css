@@ -111,6 +111,12 @@ p {
 p, h2, h3, h4, h5, h6 {
     color: #3c3c3c;
 }
+.body-bg {
+    background-color: lightgray;
+}
+.title {
+    /* border-bottom: 1px solid #3c3c3c; */
+}
 /*** END Global Values ***/
 
 /*** Navbar ***/
@@ -170,17 +176,31 @@ blockquote p {
     width: 100%;
 }
 /*** END Index Page ***/
-.body-bg {
-    background-color: lightgray;
-}
-.title {
-    border-bottom: 1px solid #3c3c3c;
-}
+
 
 /*** Student Portal Page ***/
 
 /*** END Student Portal Page ***/
 
+/*** Student Scoreboard Page ***/
+#scoreboard {
+    background-color: white;
+    font-size: 1.2em;
+}
+.score {
+    background-color: green;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 1em;
+}
+.table-col-adjust{
+    text-align: center;
+}
+.th-sm {
+    min-width: 2rem;
+}
+/*** END Student Scoreboard Page ***/
 
 /*** Media Query Less Than 1200 ***/
 @media screen and (max-width: 1200px) {
