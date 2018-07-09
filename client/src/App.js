@@ -17,6 +17,8 @@ import Login from './Pages/Login';
 import MentorDashboard from './Pages/MentorDashboard';
 import { logoutUser } from './actions/authActions';
 import { clearCurrentProfile } from './actions/profileActions';
+import CreateProfile from './Pages/CreateProfile';
+
 
 // import Mentor from './Pages/Mentor'
 // import Student from './Pages/Student'
@@ -58,19 +60,25 @@ class App extends Component {
     return (
       <Provider store={ store }>
         <Router>
-          <div>
-            <Switch>
+          <div className="App">
+            {/* <Switch> */}
               <Route exact path="/" component={Home}/>
               <Route exact path="/pages/teacherstudent/teacherstudent.html" component={SignUp}/>
-              <Route exact path="/register" component={MentorForm}/>
               <Route exact path="/mentor" component={Mentor}/>
-              <Route exact path="/login" component={Login}/>
-              <Switch>
-                <PrivateRoute exact path="/mentordashboard" component={ MentorDashboard } />                     
-              </Switch>
+
+              <div className="container">
+                <Route exact path="/register" component={MentorForm}/>                
+                <Route exact path="/login" component={Login}/>
+                <Switch>
+                  <PrivateRoute exact path="/mentordashboard" component={ MentorDashboard } />                     
+                </Switch>
+                <Switch>
+                  <PrivateRoute exact path="/create-profile" component={ CreateProfile } />                     
+                </Switch>
+              </div>
               {/*<Route exact path="/Mentor" component={Mentor}/>
               <Route exact path="/Student" component={Student}/>*/}
-            </Switch>
+            {/* </Switch> */}
           </div>
         </Router>
       </Provider>
