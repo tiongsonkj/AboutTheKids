@@ -8,6 +8,7 @@ const passport = require('passport');
 // CONNECTING TO ROUTES
 // const routes = require("./routes");
 const mentors = require('./routes/api/mentors');
+const profile = require('./routes/api/profile');
 
 // initializing express
 const app = express();
@@ -41,6 +42,7 @@ require('./config/passport')(passport);
 // both API and view route
 // app.use(routes);
 app.use('/api/mentors', mentors);
+app.use('/api/profile', profile);
 
 const PORT = process.env.PORT || 8000;
 

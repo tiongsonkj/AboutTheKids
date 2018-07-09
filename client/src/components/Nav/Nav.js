@@ -18,8 +18,8 @@ class Nav extends Component {
         const authLinks = (
             <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                {/* dont need <Link> because page will not be going anywhere */}
-                <a 
+                    {/* dont need <Link> because page will not be going anywhere */}
+                    <a 
                         href="" 
                         onClick={this.onLogoutClick.bind(this)} 
                         className="nav-link">

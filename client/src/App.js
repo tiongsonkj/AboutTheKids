@@ -3,15 +3,18 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser } from './actions/authActions';
-import store from './store';
 
 import { Provider } from 'react-redux'; //provides our application with the store which is the state
+import store from './store';
+
+import PrivateRoute from './components/PrivateRoute';
 
 import Home from './Pages/Home';
 import SignUp from './Pages/SignUp';
 import MentorForm from './Pages/MentorForm';
 import Mentor from './Pages/Mentor';
 import Login from './Pages/Login';
+import MentorDashboard from './Pages/MentorDashboard';
 import { logoutUser } from './actions/authActions';
 
 // import Mentor from './Pages/Mentor'
@@ -60,6 +63,9 @@ class App extends Component {
               <Route exact path="/register" component={MentorForm}/>
               <Route exact path="/mentor" component={Mentor}/>
               <Route exact path="/login" component={Login}/>
+              <Switch>
+                <PrivateRoute exact path="/mentordashboard" component={ MentorDashboard } />                     
+              </Switch>
               {/*<Route exact path="/Mentor" component={Mentor}/>
               <Route exact path="/Student" component={Student}/>*/}
             </Switch>
