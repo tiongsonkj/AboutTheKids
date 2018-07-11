@@ -111,8 +111,9 @@ p {
 p, h2, h3, h4, h5, h6 {
     color: #3c3c3c;
 }
-.body-bg {
-    background-color: lightgray;
+.body-gradient {
+    background: linear-gradient(to bottom, aliceblue, rgb(146, 146, 160));
+    height: 75vmax;
 }
 .title {
     /* border-bottom: 1px solid #3c3c3c; */
