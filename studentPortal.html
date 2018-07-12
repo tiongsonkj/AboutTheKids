@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +21,7 @@
     <link rel="shortcut icon" type="image/png" href="img/favicon.png">
 </head>
 
-<body class="body-bg">
+<body class="body-gradient">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="navbar-brand" id="navbrand">
@@ -40,6 +41,9 @@
             <ul class="navbar-nav ml-auto justify-content-end">
                 <li class="nav-item px-2">
                     <h4>Welcome Jane</h4>
+                </li>
+                <li class="ml-2">
+                    <a href="index.html" class="btn btn-danger">Log-Out</a>
                 </li>
             </ul>
         </div>
@@ -70,11 +74,11 @@
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item p-1">Jane Doe</li>
                                     <li class="list-group-item p-1">jdoe1871@students.d211.org</li>
-                                    <li class="list-group-item text-center score p-3 mt-1 ">47
-                                        <br>Points</li>
-                                    <!-- <li class="list-group-item p-1 pl-3">
-                                        <a href="#calendar">Link to Calendar</a>
-                                    </li> -->
+                                    <li class="list-group-item text-center score p-2 mt-1 ">47
+                                        Points</li>
+                                    <li class="list-group-item p-0">
+                                        <a href="studentScoreboard.html" class="btn btn-dark btn-block">Go to Scoreboard</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -97,7 +101,9 @@
                             <!-- Info Section -->
                             <div class="col-md-8 list">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item p-1">John Doe</li>
+                                    <li class="list-group-item p-1">
+                                        <a href="mentorPortal.html">John Doe</a>
+                                    </li>
                                     <li class="list-group-item p-1">jdoe1871@students.d211.org</li>
                                     <li class="list-group-item p-1">847-755-2600</li>
                                     <li class="list-group-item p-1">Room 147</li>
@@ -193,7 +199,9 @@
                 <div class="card">
                     <div class="card-header">
                         Interests
-                        <a href="#" class="float-right btn-sm p-0"><i class="far fa-edit"></i></a>                        
+                        <a href="#" class="float-right btn-sm p-0">
+                            <i class="far fa-edit"></i>
+                        </a>
                     </div>
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
@@ -209,7 +217,9 @@
                 <div class="card my-4">
                     <div class="card-header">
                         Extracurricular Activities
-                        <a href="#" class="float-right btn-sm p-0"><i class="far fa-edit"></i></a>                        
+                        <a href="#" class="float-right btn-sm p-0">
+                            <i class="far fa-edit"></i>
+                        </a>
                     </div>
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
@@ -229,4 +239,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
 </body>
+
 </html>

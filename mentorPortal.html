@@ -21,7 +21,7 @@
     <link rel="shortcut icon" type="image/png" href="img/favicon.png">
 </head>
 
-<body class="body-bg">
+<body class="body-gradient">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="navbar-brand" id="navbrand">
@@ -39,21 +39,25 @@
 
         <div class="navbar-collapse collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto justify-content-end">
-                <li class="nav-item px-2">
-                    <h4>Welcome John</h4>
+                <li class="nav-item px-2 pt-1">
+                    <h4 class="mb-0">Welcome John</h4>
+                </li>
+                <li class="ml-2">
+                    <a href="index.html" class="btn btn-danger">Log-Out</a>
                 </li>
             </ul>
         </div>
     </nav>
 
     <div class="container">
+
+        <div class="col-lg-12">
+            <h2 class="text-center my-4 title">Mentor Portal</h2>
+        </div>
+
         <div class="row">
 
-            <div class="col-lg-12">
-                <h2 class="text-center my-4 title">Mentor Portal</h2>
-            </div>
-
-            <!-- Student Info Card -->
+            <!-- Mentor Info Card -->
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-header">
@@ -62,7 +66,7 @@
 
                     <div class="card-body">
                         <div class="row">
-                            <!-- Student Image -->
+                            <!-- Mentor Image -->
                             <div class="col-md-4 pr-0">
                                 <img src="static_ui/img/icon.png" alt="temporary profile photo" class="img-fluid">
                             </div>
@@ -73,125 +77,154 @@
                                     <li class="list-group-item p-1">jdoe1871@students.d211.org</li>
                                     <li class="list-group-item p-1">847-755-2600</li>
                                     <li class="list-group-item p-1">Room 147</li>
-                                    <li class="list-group-item p-1">
-                                        <a href="#">Class Schedule</a>
-                                    </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Mentor Info Card -->
-            <div class="col-lg-6 mtop">
-                <div class="card">
-                    <div class="card-header">
-                        To Be Determined
+                <div class="mt-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Schedule
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-sm">
+                                <!--Table Head-->
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>Period</th>
+                                        <th>Class</th>
+                                        <th>Room #</th>
+                                    </tr>
+                                </thead>
+                                <!-- End Table Head -->
+                                <!-- Table Body -->
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>P.E.</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Math</td>
+                                        <td>247</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>History</td>
+                                        <td>214</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4</th>
+                                        <td>Lunch</td>
+                                        <td>Cafe</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">5</th>
+                                        <td>Biology</td>
+                                        <td>174</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">6</th>
+                                        <td>English</td>
+                                        <td>108</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">7</th>
+                                        <td>Art</td>
+                                        <td>47</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">8</th>
+                                        <td>Resource</td>
+                                        <td>116</td>
+                                    </tr>
+                                </tbody>
+                                <!-- End Table Body -->
+                            </table>
+                            <!-- End Table -->
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <!-- Info Section -->
-                            <div class="col-md-12 list">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item p-1"></li>
-                                    <li class="list-group-item p-1"></li>
-                                    <li class="list-group-item p-1"></li>
-                                    <li class="list-group-item p-1"></li>
-                                    <li class="list-group-item p-1"></li>
-                                </ul>
-                            </div>
+                    <div class="card mt-4 mb-4">
+                        <div class="card-header">
+                            Calendar
+                        </div>
+                        <div class="card-body">
+                            <img src="static_ui/img/calendar.png" alt="student calendar" width="100%">
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="row">
-            <!-- Schedule -->
-            <div class="col-lg-6 pt-4">
-                <!--Table-->
-                <table id="scoreboard" class="table">
-                    <!--Table Head-->
-                    <thead class="thead-light">
-                        <tr>
-                            <th>#</th>
-                            <th>Name</th>
-                            <th>Score</th>
-                        </tr>
-                    </thead>
-                    <!-- End Table Head -->
-                    <!-- Table Body -->
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark Otto</td>
-                            <td>54</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob Thornton</td>
-                            <td>48</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry Bird</td>
-                            <td>46</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>Dorsey Honahni</td>
-                            <td>32</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">5</th>
-                            <td>Edda Vandehey</td>
-                            <td>30</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">6</th>
-                            <td>Emery Priolo</td>
-                            <td>27</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">7</th>
-                            <td>Lakita Cauley</td>
-                            <td>25</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">8</th>
-                            <td>Miles Arango</td>
-                            <td>22</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">9</th>
-                            <td>Antoine Prime</td>
-                            <td>19</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">10</th>
-                            <td>Rod Burg</td>
-                            <td>16</td>
-                        </tr>
-                    </tbody>
-                    <!-- End Table Body -->
-                </table>
-                <!-- End Table -->
-            </div>
-
-            <div class="col-lg-6 mt-4">
+            <!-- Mentor Interests -->
+            <div class="col-lg-6">
+                <!-- Bio -->
                 <div class="card">
                     <div class="card-header">
-                        Schedule
+                        Bio
+                        <a href="#" class="float-right btn-sm p-0">
+                            <i class="far fa-edit"></i>
+                        </a>
                     </div>
                     <div class="card-body">
-                        <table class="table table-sm">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error necessitatibus eveniet quasi, alias
+                            dicta distinctio harum ut dignissimos doloribus facilis iure rerum fugit impedit explicabo quo
+                            laboriosam sunt odio odit sed corrupti veritatis. Exercitationem voluptate laboriosam beatae
+                            fugit doloremque voluptatem, reprehenderit a ratione provident similique tempore aut laudantium
+                            quam, quibusdam pariatur rem voluptatibus totam voluptas esse, odit corrupti repellat dolores.</p>
+                    </div>
+                </div>
+
+                <!-- Interests -->
+                <div class="card mt-4">
+                    <div class="card-header">
+                        Interests
+                        <a href="#" class="float-right btn-sm p-0">
+                            <i class="far fa-edit"></i>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item p-1">Cooking</li>
+                            <li class="list-group-item p-1">Reading</li>
+                            <li class="list-group-item p-1">Politics</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Extracurricular -->
+                <div class="card my-4">
+                    <div class="card-header">
+                        Extracurricular Activities
+                        <a href="#" class="float-right btn-sm p-0">
+                            <i class="far fa-edit"></i>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item p-1">Bicycling</li>
+                            <li class="list-group-item p-1">Karate</li>
+                            <li class="list-group-item p-1">Fishing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Assigned Students -->
+                <div class="card mt-4">
+                    <div class="card-header">
+                        Assigned Students
+                    </div>
+                    <div class="card-body">
+                        <!--Table-->
+                        <table id="scoreboard" class="table">
                             <!--Table Head-->
                             <thead class="thead-light">
                                 <tr>
-                                    <th>Period</th>
-                                    <th>Class</th>
-                                    <th>Room #</th>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Score</th>
                                 </tr>
                             </thead>
                             <!-- End Table Head -->
@@ -199,58 +232,36 @@
                             <tbody>
                                 <tr>
                                     <th scope="row">1</th>
-                                    <td>P.E.</td>
-                                    <td>1</td>
+                                    <td>
+                                        <a href="studentPortal.html">Mark Otto</a>
+                                    </td>
+                                    <td>54</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">2</th>
-                                    <td>Math</td>
-                                    <td>247</td>
+                                    <td>
+                                        <a href="studentPortal.html">Jacob Thornton</a>
+                                    </td>
+                                    <td>48</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">3</th>
-                                    <td>History</td>
-                                    <td>214</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>Lunch</td>
-                                    <td>Cafe</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td>Biology</td>
-                                    <td>174</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">6</th>
-                                    <td>English</td>
-                                    <td>108</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">7</th>
-                                    <td>Art</td>
-                                    <td>47</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">8</th>
-                                    <td>Resource</td>
-                                    <td>116</td>
+                                    <td>
+                                        <a href="studentPortal.html">Larry Bird</a>
+                                    </td>
+                                    <td>46</td>
                                 </tr>
                             </tbody>
                             <!-- End Table Body -->
                         </table>
                         <!-- End Table -->
+
                     </div>
                 </div>
-                <div class="card mt-4 mb-4">
-                    <div class="card-header">
-                        Calendar
-                    </div>
-                    <div class="card-body">
-                        <img src="static_ui/img/calendar.png" alt="student calendar" width="100%">
-                    </div>
-                </div>
+
+
+
+
             </div>
         </div>
     </div>
