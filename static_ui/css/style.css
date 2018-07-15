@@ -113,7 +113,7 @@ p, h2, h3, h4, h5, h6 {
 }
 .body-gradient {
     background: linear-gradient(to bottom, aliceblue, rgb(146, 146, 160));
-    height: 75vmax;
+    height: 85vmax;
 }
 .title {
     /* border-bottom: 1px solid #3c3c3c; */
@@ -178,6 +178,16 @@ blockquote p {
 }
 /*** END Index Page ***/
 
+/*** Create account page ***/
+
+#headingOne {
+    background-color: #ffc107;
+}
+
+#headingTwo {
+    background-color: #ffc107;
+}
+/*** END Create account page ***/
 
 /*** Student Portal Page ***/
 
