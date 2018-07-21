@@ -38,10 +38,10 @@ class Nav extends Component {
         const guestLinks = (
             <ul className="navbar-nav ml-auto justify-content-end">
                 <li className="nav-item px-2">
-                    <a className="navtext navbar-link" href="pages/teacherstudent/teacherstudent.html">Create Account</a>
+                    <a className="navbar-link btn btn-warning" href="pages/teacherstudent/teacherstudent.html">Create Account</a>
                 </li>
                 <li className="nav-item px-2">
-                    <Link className="navtext navbar-link" to="/login">Sign In</Link>
+                    <Link className="navbar-link btn btn-info" to="/login">Sign In</Link>
                 </li>
             </ul>
         );
@@ -50,7 +50,7 @@ class Nav extends Component {
         <div className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="navbar-brand" id="navbrand">
                 <img src={logo} alt="logo" className=""/>
-                <Link className="navtext navbar-link" to="/">About The Kids</Link>
+                <Link className="logo-text" to="/"><h1>About The Kids</h1></Link>
             </div>
 
             {/* <!-- this is the button for when the page shrinks (hamburger) --> */}
