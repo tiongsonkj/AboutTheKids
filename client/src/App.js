@@ -26,8 +26,6 @@ import CreateProfile from './Pages/CreateProfile';
 // Provider is going to take in a store
 // Reducer => a function that returns the next state tree, given the current state tree and an action to handle
 
-import './App.css';
-
 // check for token
 if(localStorage.jwtToken) {
   // set auth token header auth

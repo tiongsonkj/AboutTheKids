@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Nav from '../../components/Nav';
-import './Mentor.css';
+// import './Mentor.css';
 import axios from 'axios';
 
 class MentorForm extends Component {

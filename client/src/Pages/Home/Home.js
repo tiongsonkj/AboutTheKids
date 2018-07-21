@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './Home.css';
+// import './Home.css';
 import calendar from '../../assets/img/2018-calendar.jpg';
 import Nav from '../../components/Nav'
 
@@ -26,7 +26,39 @@ class Home extends Component{
             <div>
                 <Nav />
 
-                <div className="jumbotron jumbotron-fluid">
+                <div className="jumbotron jumbotron-fluid mb-0">
+                    <div className="container">
+                        <div className="row">
+
+                            <div className="col-lg-6">
+                                <div className="card p-5">
+                                    <h2 className="title-text text-uppercase"><strong>About</strong><br />The Kids</h2>
+                                    <blockquote className="blockquote text-right mb-0"><p>"A mentor is someone who allows you to see the hope inside yourself"</p></blockquote>
+                                </div>
+                            </div>
+
+                            <div id="cal-col" className="col-lg-6">
+                                <h2 className="bg-warning p-2"><i className="fas fa-calendar-alt mx-2"></i><strong>Events Calendar</strong></h2>
+                                <img id="calendar" src="../../../../static_ui/img/2018-calendar.jpg" alt="Interactive Calendar" />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div className="container">
+                    <div className="row quote">
+                        <h1>"A mentor is someone who allows you to see the hope inside yourself."</h1>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
+
+export default Home;
+
+{/* <div className="jumbotron jumbotron-fluid">
                     <div className="container my-auto">
                         <div className="row">
                             <div className="col-lg-7 mx-auto pt-5">
@@ -46,16 +78,4 @@ class Home extends Component{
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div className="container">
-                    <div className="row quote">
-                        <h1>"A mentor is someone who allows you to see the hope inside yourself."</h1>
-                    </div>
-                </div>
-            </div>
-        );
-    }
-}
-
-export default Home;
+                </div> */}
