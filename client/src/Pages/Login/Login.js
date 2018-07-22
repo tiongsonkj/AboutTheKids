@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Nav from '../../components/Nav';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { connect } from 'react-redux';
@@ -70,7 +69,6 @@ class Login extends Component {
 
         return (
         <div className="login">
-            <Nav />
             <div className="container">
                 <div className="row">
                     <div className="col-md-8 m-auto">

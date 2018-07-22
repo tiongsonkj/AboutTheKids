@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import calendar from '../../assets/img/2018-calendar.jpg';
-import Nav from '../../components/Nav'
 
 class Home extends Component{
 
@@ -23,8 +22,6 @@ class Home extends Component{
     render(){
         return(
             <div>
-                <Nav />
-
                 <div className="jumbotron jumbotron-fluid mb-0">
                     <div className="container">
                         <div className="row">

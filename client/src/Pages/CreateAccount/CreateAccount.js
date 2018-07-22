@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Nav from '../../components/Nav';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import classnames from 'classnames';
@@ -81,10 +80,7 @@ class CreateAccount extends Component {
         console.log(errors);
 
         return (
-        <div className="create-account">
-
-            <Nav />
-            
+        <div className="create-account">            
             <div className="container mt-5">
                 <div className="row">
                     <div className="col-lg-12 text-center my-4 title">
