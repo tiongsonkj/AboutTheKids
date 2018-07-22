@@ -10,6 +10,7 @@ import store from './store';
 import PrivateRoute from './components/PrivateRoute';
 
 import Home from './Pages/Home';
+import CreateAccount from './Pages/CreateAccount';
 import SignUp from './Pages/SignUp';
 import MentorForm from './Pages/MentorForm';
 import Mentor from './Pages/Mentor';
@@ -61,7 +62,7 @@ class App extends Component {
           <div className="App">
             {/* <Switch> */}
               <Route exact path="/" component={Home}/>
-              <Route exact path="/pages/teacherstudent/teacherstudent.html" component={SignUp}/>
+              <Route exact path="/create-account" component={CreateAccount}/>
               <Route exact path="/mentor" component={Mentor}/>
 
               <div className="container">

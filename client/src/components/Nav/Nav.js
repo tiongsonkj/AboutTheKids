@@ -38,7 +38,7 @@ class Nav extends Component {
         const guestLinks = (
             <ul className="navbar-nav ml-auto justify-content-end">
                 <li className="nav-item px-2">
-                    <a className="navbar-link btn btn-warning" href="pages/teacherstudent/teacherstudent.html">Create Account</a>
+                    <Link className="navbar-link btn btn-warning" to="/create-account">Create Account</Link>
                 </li>
                 <li className="nav-item px-2">
                     <Link className="navbar-link btn btn-info" to="/login">Sign In</Link>

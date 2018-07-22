@@ -31,7 +31,7 @@ p {
 p, h2, h3, h4, h5, h6 {
   color: #3c3c3c; }
 
-.body-gradient {
+body {
   background: linear-gradient(to bottom, aliceblue, #9292a0);
   height: 85vmax; }
 
@@ -101,6 +101,11 @@ blockquote p {
 
 #headingTwo {
   background-color: #ffc107; }
+
+.create-account {
+  text-align: initial; }
+  .create-account select {
+    margin-left: 5px; }
 
 /*** END Create account page ***/
 /*** Student Portal Page ***/
