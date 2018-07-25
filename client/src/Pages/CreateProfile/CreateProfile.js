@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { createProfile } from '../../actions/profileActions';
-import Nav from '../../components/Nav';
 
 // import classnames from 'classnames';
 
@@ -62,8 +61,6 @@ class CreateProfile extends Component {
             <div className="create-profile">
                 <div className="container">
                     <div className="row">
-                        <Nav />
-
                         <div className="col-md-8 m-auto">
                             <h1 className="display-4 text-center">Create your profile</h1>
                             <form onSubmit={this.onSubmit}>

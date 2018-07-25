@@ -15,10 +15,14 @@ const ProfileSchema = new Schema({
         type: String,
         required: true
     },
-    ext_activities: {
-        type: String,
-        required: true
-    },
+    ext_activities: [
+        {
+            activity: {
+                type: String,
+                required: true
+            }
+        }
+    ],
     students: [ //may need to match the student's data
         {
             first_name: {

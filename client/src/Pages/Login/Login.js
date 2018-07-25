@@ -64,15 +64,19 @@ class Login extends Component {
         this.props.loginUser(userData);
     }
 
+    // NEED TO FIX THIS PAGE, IF EMAIL DOES NOT EXIST IN DB THEN NEED TO CREATE ERROR
     render() {
         const { errors } = this.state;
+        console.log(errors);
 
         return (
         <div className="login">
-            <div className="container">
+            <div className="container mt-5">
                 <div className="row">
                     <div className="col-md-8 m-auto">
-                    <h1 className="display-4 text-center">Log In</h1>
+                    <div className="col-lg-12 text-center my-4 title">
+                        <h2>Log In</h2>
+                    </div>
                     <form onSubmit={this.onSubmit}>
                         <div className="form-group">
                             <input 

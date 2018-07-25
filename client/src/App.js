@@ -12,11 +12,13 @@ import PrivateRoute from './components/PrivateRoute';
 import Home from './Pages/Home';
 import Nav from '../src/components/Nav';
 import CreateAccount from './Pages/CreateAccount';
-import SignUp from './Pages/SignUp';
+// import SignUp from './Pages/SignUp';
 import MentorForm from './Pages/MentorForm';
 import Mentor from './Pages/Mentor';
 import Login from './Pages/Login';
 import MentorDashboard from './Pages/MentorDashboard';
+import MentorProfile from './Pages/MentorProfile';
+import AddExtActivity from './Pages/AddInfo/AddExtActivity';
 import { logoutUser } from './actions/authActions';
 import { clearCurrentProfile } from './actions/profileActions';
 import CreateProfile from './Pages/CreateProfile';
@@ -70,11 +72,18 @@ class App extends Component {
                 <Route exact path="/create-account" component={CreateAccount}/>              
                 <Route exact path="/register" component={MentorForm}/>                
                 <Route exact path="/login" component={Login}/>
+                {/* <Route exact path="/profile/:handle" component={ MentorProfile } />             */}
                 <Switch>
                   <PrivateRoute exact path="/mentordashboard" component={ MentorDashboard } />                     
                 </Switch>
                 <Switch>
+                  <PrivateRoute exact path="/mentorprofile" component={ MentorProfile } />                     
+                </Switch>
+                <Switch>
                   <PrivateRoute exact path="/create-profile" component={ CreateProfile } />                     
+                </Switch>
+                <Switch>
+                  <PrivateRoute exact path="/add-activity" component={ AddExtActivity } />                     
                 </Switch>
               </div>
               {/*<Route exact path="/Mentor" component={Mentor}/>

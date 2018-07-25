@@ -100,4 +100,33 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
         });
 });
 
+// @route POST request to api/profile/extactivity
+// @desc  add ext activity to profile
+// @access Private because we need actual user who is submitting the form
+router.post('/extactivity', passport.authenticate('jwt', { session: false }), (req, res) => {
+    // bring in validation/experience function
+    // const { errors, isValid } = validateExperienceInput(req.body);
+
+    // // check validation
+    // if(!isValid) {
+    //     // return any errors with 400 status
+    //     return res.status(400).json(errors);
+    // }
+
+    // console.log(req.body);
+    Profile.findOne({ mentor: req.user._id })
+        .then(profile => {
+            const newExtActivity = req.body.activity;
+            
+            console.log(newExtActivity);
+
+
+            //  add to exp array
+            // unshift adds to front of array
+            profile.ext_activities.unshift(newExtActivity);
+
+            profile.save().then(profile => res.json(profile));
+        })
+});
+
 module.exports = router;
