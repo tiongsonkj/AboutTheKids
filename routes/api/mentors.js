@@ -121,7 +121,6 @@ router.post('/login', (req, res) => {
                             last_name: mentor.last_name,
                             avatar: mentor.avatar
                         } 
-                        console.log(payload);
 
                         // implement jwt at a later time
                         // sign token
@@ -148,7 +147,6 @@ router.post('/login', (req, res) => {
 // @desc    Return current mentor
 // @access  Private
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
-    console.log(req);
     res.json({
         id: req.user._id,
         first_name: req.user.first_name,

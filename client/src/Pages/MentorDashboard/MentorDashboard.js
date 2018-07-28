@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getCurrentMentor, getCurrentProfile } from '../../actions/profileActions';
 import Spinner from '../../components/Spinner';
 import MentorProfileActions from './MentorProfileActions'; 
+import DashboardExtActivity from '../../components/DashboardExtActivity';
 
 class MentorDashboard extends Component {
     componentDidMount() {
@@ -13,16 +14,13 @@ class MentorDashboard extends Component {
     }
 
     // onDeleteClick(e) {
-    //     this.props.deleteAccount();
+    //     this.props.deleteActivity();
     // }
     
     render() {
-        console.log(this.props);
         const { user } = this.props.auth;
         const { profile, loading } = this.props.profile;
-        console.log(profile);
         const currentMentor = this.props.profile.mentor;
-
 
         // initialize dashboard content variable
         let mentorDashboardContent;
@@ -40,7 +38,7 @@ class MentorDashboard extends Component {
                         </p>            
                         <MentorProfileActions />
                         TODO: exp and education
-                        {/* <Experience experience={profile.experience} /> */}
+                        <DashboardExtActivity extActivity={profile.ext_activities} />
                         {/* <Education education={profile.education} /> */}
                         <div style={{ marginBottom: '60px' }} />
                         {/* <button onClick={this.onDeleteClick.bind(this)} className="btn btn-danger">Delete My Account</button> */}

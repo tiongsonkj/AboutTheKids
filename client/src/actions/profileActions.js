@@ -52,6 +52,38 @@ export const createProfile = (profileData, history) => dispatch => {
         );
 };
 
+// add extra curricular activity
+// LEARNING LESSON: HAVE TO PASS IN AS AN OBJECT
+export const addActivity = (extActData, history) => dispatch => {
+    axios.post('/api/profile/extactivity', {
+        activity: extActData
+    }).then(res => {
+        history.push('/mentordashboard')
+    }).catch(err => 
+        dispatch({
+            type: GET_ERRORS,
+            payload: err.response.data
+        })
+    ); 
+};
+
+// delete extra curricular activity
+export const deleteActivity = (index) => dispatch => {
+    axios.delete(`/api/profile/extactivity/${index}`)
+        .then(res => 
+            dispatch({
+                type: GET_PROFILE,
+                payload: res.data //when we delete experience we get profile back without that deleted experience
+            })
+        )
+        .catch(err => 
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+            })
+        ); 
+};
+
 // Profile loading. This lets reducer know its loading
 export const setProfileLoading = () => {
     return {

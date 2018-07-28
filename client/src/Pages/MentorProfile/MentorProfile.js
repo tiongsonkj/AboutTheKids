@@ -15,16 +15,17 @@ class MentorProfile extends Component {
     render() {
         console.log(this.props);
         const { mentor } = this.props.auth;
-        // console.log(this.props.profile);
-        // console.log(mentor);
-        // console.log(this.state);
         const currentMentor = this.props.profile.mentor;
-        console.log(currentMentor);
         const { profile, loading } = this.props.profile;
         console.log(profile);
+        // console.log(profile.ext_activities);
        
         // initialize dashboard content variable
         let dashboardContent;
+
+        // const listOfExtActivities = profile.ext_activities.map(activity => (
+        //     <li className="list-group-item p-1">{activity}</li>   
+        // ));
 
         // if profile is null or loading is true (looking at initial state in profile reducer)
         if(profile === null || loading) {
@@ -214,9 +215,10 @@ class MentorProfile extends Component {
                                 </div>
                                 <div className="card-body">
                                     <ul className="list-group list-group-flush">
-                                        <li className="list-group-item p-1">Cooking</li>
+                                        {/* <li className="list-group-item p-1">Cooking</li>
                                         <li className="list-group-item p-1">Reading</li>
-                                        <li className="list-group-item p-1">Politics</li>
+                                        <li className="list-group-item p-1">Politics</li> */}
+                                        {/* {listOfExtActivities} */}
                                     </ul>
                                 </div>
                             </div>

@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-// import { addExperience } from '../../actions/profileActions';
+import { addActivity } from '../../actions/profileActions';
 
 class AddExtActivity extends Component {
     constructor(props) {
@@ -11,7 +11,6 @@ class AddExtActivity extends Component {
         this.state = {
             activity: '',
             current: false, //current job or experience
-            description: '',
             errors: {},
             disabled: false  // disabled goes true if they click current checkbox
         };
@@ -32,17 +31,9 @@ class AddExtActivity extends Component {
 
         console.log('submit');
         
-        const expData = {
-            company: this.state.company,
-            title: this.state.title,
-            location: this.state.location,
-            from: this.state.from,
-            to: this.state.to,
-            current: this.state.current,
-            description: this.state.description
-        };
-
-        this.props.addExperience(expData, this.props.history);
+        const extActData = this.state.activity
+        
+        this.props.addActivity(extActData, this.props.history);
     }
 
     onChange(e) {
@@ -92,6 +83,7 @@ class AddExtActivity extends Component {
 };
 
 AddExtActivity.propTypes = {
+    addActivity: PropTypes.func.isRequired,
     profile: PropTypes.object.isRequired,
     errors: PropTypes.object.isRequired
 };
@@ -103,4 +95,4 @@ const mapStateToProps = state => ({
     errors: state.errors
 });
 
-export default connect(mapStateToProps)(withRouter(AddExtActivity));
+export default connect(mapStateToProps, { addActivity })(withRouter(AddExtActivity));

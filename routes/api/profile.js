@@ -23,7 +23,6 @@ router.get('/test', (req, res) => res.json({msg: "Profile Works"}));
 // @access Private
 router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
     const errors = {};
-    // console.log(req);
 
     // from Profile schema
     Profile.findOne({ mentor: req.user._id })
@@ -116,15 +115,32 @@ router.post('/extactivity', passport.authenticate('jwt', { session: false }), (r
     // console.log(req.body);
     Profile.findOne({ mentor: req.user._id })
         .then(profile => {
+            // console.log(req.body);
             const newExtActivity = req.body.activity;
             
-            console.log(newExtActivity);
-
-
             //  add to exp array
             // unshift adds to front of array
             profile.ext_activities.unshift(newExtActivity);
 
+            profile.save().then(profile => res.json(profile));
+        })
+});
+
+// @route DELETE request to api/profile/extactivity
+// @desc  delete specific ext activity from profile
+// @access Private because we need actual user who is submitting the form
+router.delete('/extactivity/:extact_index', passport.authenticate('jwt', { session: false }), (req, res) => {
+    
+    Profile.findOne({ mentor: req.user._id })
+        .then(profile => {
+            // loop through the profile array
+            for(var i = 0; i < profile.ext_activities.length; i++) {
+                // if the element at req.params.extact_index matches the loop index, then splice that element out
+                if(profile.ext_activities[req.params.extact_index] == profile.ext_activities[i]) {
+                    profile.ext_activities.splice(req.params.extact_index, 1);
+                }
+            }
+            // save new profile
             profile.save().then(profile => res.json(profile));
         })
 });
