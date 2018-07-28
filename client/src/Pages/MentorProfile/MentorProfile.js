@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getCurrentProfile, getCurrentMentor } from '../../actions/profileActions';
 import Spinner from '../../components/Spinner';
 import calendar from '../../assets/img/calendar.png';
+import Interests from '../../components/Interests/Interests';
 
 class MentorProfile extends Component {
     componentDidMount() {
@@ -206,22 +207,7 @@ class MentorProfile extends Component {
                             </div>
             
                             {/* <!-- Interests --> */}
-                            <div className="card mt-4">
-                                <div className="card-header">
-                                    Interests
-                                    <a href="#" className="float-right btn-sm p-0">
-                                        <i className="far fa-edit"></i>
-                                    </a>
-                                </div>
-                                <div className="card-body">
-                                    <ul className="list-group list-group-flush">
-                                        {/* <li className="list-group-item p-1">Cooking</li>
-                                        <li className="list-group-item p-1">Reading</li>
-                                        <li className="list-group-item p-1">Politics</li> */}
-                                        {/* {listOfExtActivities} */}
-                                    </ul>
-                                </div>
-                            </div>
+                            <Interests profile={profile}/>
             
                             {/* <!-- Extracurricular --> */}
                             <div className="card my-4">
