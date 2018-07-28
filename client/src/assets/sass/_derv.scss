@@ -2,96 +2,112 @@
 
 /*** Global Values ***/
 p {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
-p, h2, h3, h4, h5, h6 {
-    color: #3c3c3c;
+p,
+h2,
+h4,
+h5,
+h6 {
+  color: #3c3c3c;
 }
 
 body {
-    background: linear-gradient(to bottom, aliceblue, rgb(146, 146, 160));
-    height: 85vmax;
+  background: linear-gradient(to bottom, aliceblue, rgb(146, 146, 160));
 }
 
-.title {
-    /* border-bottom: 1px solid #3c3c3c; */
+html {
+  background: linear-gradient(to bottom, aliceblue, rgb(146, 146, 160));
 }
 /*** END Global Values ***/
 
 /*** Navbar ***/
 .navbar {
-    padding-bottom: 0;
-    padding-top: 0;
+  padding-bottom: 0;
+  padding-top: 0;
 }
 .navbar-brand img {
-    height: 3em;
+  height: 3em;
 }
-.logo-text h1{
-    color: black;
-    display: inline-block;
-    font-family: 'Carter One', cursive;
-    margin-bottom: 0;
-    vertical-align: middle;
+.logo-text h1 {
+  color: black;
+  display: inline-block;
+  font-family: "Carter One", cursive;
+  margin-bottom: 0;
+  vertical-align: middle;
 }
 .navbar a {
-    text-decoration: none;
+  text-decoration: none;
 }
 .navbar-link {
-    font-weight: 600;
+  font-weight: 600;
 }
 /*** END Navbar ***/
 
 /*** Index Page ***/
+#index-content {
+  position: relative;
+  top: 0;
+}
 .jumbotron {
-    background-image: url(./assets/img/jumbotron2.jpg);
-    background-position: center center;
-    background-size: cover;
-    height: 55vmax;
+  background-image: url(./assets/img/jumbotron2.jpg);
+  background-position: top -520px center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0px 2px 10px #3c3c3c;
+  height: 500px;
 }
 .jumbotron h2 {
-    font-size: 5em;
-    line-height: .9em;
+  font-size: 5em;
+  line-height: 0.9em;
 }
-.jumbotron .card {
-    background-color: rgba(255, 255, 255, 0.3);
+
+#quote {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 .jumbotron .card h2 {
-    color: #ffc107;
-    text-shadow: 2px 2px 2px rgb(75, 75, 75);
+  color: #ffc107;
+  text-shadow: 2px 2px 2px rgb(75, 75, 75);
 }
 .jumbotron .card h2 strong {
-    color: white;
+  color: white;
 }
 blockquote p {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 1.4em;
-    font-style: italic; 
-    line-height: 1.2em;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 1.4em;
+  font-style: italic;
+  line-height: 1.2em;
 }
 #cal-col h2 {
-    font-size: 2.2em;
+  font-size: 2.2em;
 }
 #cal-col img {
-    width: 100%;
+  width: 90%;
+}
+#success-bg {
+  background-image: url(./assets/img/success1.jpg);
+  background-position: top center;
+  background-size: cover;
+  height: 375px;
 }
 /*** END Index Page ***/
 
 /*** Create account page ***/
 
 #headingOne {
-    background-color: #ffc107;
+  background-color: #ffc107;
 }
 
 #headingTwo {
-    background-color: #ffc107;
+  background-color: #ffc107;
 }
 
 .create-account {
-    text-align: initial;
+  text-align: initial;
 
-    select {
-        margin-left: 5px;
-    }
+  select {
+    margin-left: 5px;
+  }
 }
 /*** END Create account page ***/
 
@@ -101,99 +117,114 @@ blockquote p {
 
 /*** Student Scoreboard Page ***/
 #scoreboard {
-    background-color: white;
-    font-size: 1.2em;
+  background-color: white;
+  font-size: 1.2em;
 }
 .score {
-    background-color: green;
-    color: white;
-    font-size: 1.5em;
-    font-weight: bold;
-    line-height: 1em;
+  background-color: green;
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 1em;
 }
-.table-col-adjust{
-    text-align: center;
+.table-col-adjust {
+  text-align: center;
 }
 .th-sm {
-    min-width: 2rem;
+  min-width: 2rem;
 }
 /*** END Student Scoreboard Page ***/
 
+/*** Media Query Less Than 1300 ***/
+@media screen and (max-width: 1300px) {
+  .jumbotron {
+    background-position: top -345px center;
+  }
+}
 /*** Media Query Less Than 1200 ***/
 @media screen and (max-width: 1200px) {
-    .logo-text h1 {
-        font-size: 1.5em;
-    }
-    .jumbotron h2 {
-        font-size: 4.25em;
-    }
-    blockquote p {
-        font-size: 1.2em;
-        line-height: 1em;
-    }
-    #cal-col h2 {
-        font-size: 1.5em;
-    }
+  .logo-text h1 {
+    font-size: 1.5em;
+  }
+  .jumbotron {
+    background-position: top -90px center;
+  }
+  .jumbotron h2 {
+    font-size: 4.25em;
+  }
+  blockquote p {
+    font-size: 1.2em;
+    line-height: 1em;
+  }
+  #cal-col h2 {
+    font-size: 1.5em;
+  }
 }
 
 /*** Media Query Less Than 990 ***/
 @media screen and (max-width: 990px) {
-    .navbar-collapse {
-        text-align: right;
-        /* display: ; */
-        /* flex-flow: row; */
-    }
-    .navbar .btn {
-        background: none;
-        border: none;
-        color: #3c3c3c;
-    }
-    .jumbotron h2 {
-        font-size: 5.25em;
-        text-align: right;
-    }
-    blockquote p {
-        font-size: 2em;
-        line-height: 1.15em;
-    }
-    #cal-col h2 {
-        margin-top: 20px;
-        text-align: center;
-    }
-    .mtop {
-        padding-top: 1.5rem!important;
-    }
+  .navbar-collapse {
+    text-align: right;
+    /* display: ; */
+    /* flex-flow: row; */
+  }
+  .navbar .btn {
+    background: none;
+    border: none;
+    color: #3c3c3c;
+  }
+  .jumbotron {
+    background-position: top -40px center;
+  }
+  .jumbotron h2 {
+    font-size: 5.25em;
+    text-align: right;
+  }
+  blockquote p {
+    font-size: 2em;
+    line-height: 1.15em;
+  }
+  #cal-col h2 {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .mtop {
+    padding-top: 1.5rem !important;
+  }
+  #success-stories {
+    margin-top: 2em;
+  }
 }
 
 /*** Media Query Less Than 500 ***/
 @media screen and (max-width: 500px) {
-    .logo-text h1 {
-        font-size: 1.35em;
-    }
-    .jumbotron .card.p-5 {
-        padding: 1rem!important;
-    }
-     .jumbotron h2 {
-        font-size: 3.25em;
-        text-align: center;
-    }
-    blockquote p {
-        font-size: 1.15em;
-        line-height: 1em;
-        text-align: center;
-    }
+  .logo-text h1 {
+    font-size: 1.35em;
+  }
+  .jumbotron .card.p-5 {
+    padding: 1rem !important;
+  }
+  .jumbotron h2 {
+    font-size: 3.25em;
+    text-align: center;
+  }
+  blockquote p {
+    font-size: 1.15em;
+    line-height: 1em;
+    text-align: center;
+  }
 }
 
 /*** Media Query Less Than 360 ***/
 @media screen and (max-width: 360px) {
-    .logo-text h1 {
-        font-size: 1.25em;
-    }
+  .logo-text h1 {
+    font-size: 1.25em;
+  }
 }
 
 /*** Media Query Less Than 320 ***/
 @media screen and (max-width: 320px) {
-    .logo-text h1 {
-        font-size: 1em;
-    }
+  .logo-text h1 {
+    font-size: 1em;
+  }
 }
