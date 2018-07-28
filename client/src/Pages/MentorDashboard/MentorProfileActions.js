@@ -15,6 +15,10 @@ const MentorProfileActions = () => {
             <i className="fas fa-graduation-cap text-info mr-1" />
             Add Interests
         </Link>
+        <Link to="/add-class" className="btn btn-light"> 
+            <i className="fas fa-graduation-cap text-info mr-1" />
+            Add a Class to Your Schedule
+        </Link>
     </div>
   );
 };

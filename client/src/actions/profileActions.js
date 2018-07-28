@@ -116,6 +116,20 @@ export const deleteInterest = (index) => dispatch => {
         ); 
 };
 
+// add class
+// LEARNING LESSON: HAVE TO PASS IN AS AN OBJECT
+export const addClass = (classData, history) => dispatch => {
+    axios.post('/api/profile/class_schedule', classData)
+        .then(res => {
+            history.push('/mentordashboard')
+        }).catch(err => 
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+            })
+        ); 
+};
+
 // Profile loading. This lets reducer know its loading
 export const setProfileLoading = () => {
     return {

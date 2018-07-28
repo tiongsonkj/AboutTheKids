@@ -7,6 +7,7 @@ import Spinner from '../../components/Spinner';
 import MentorProfileActions from './MentorProfileActions'; 
 import DashboardExtActivity from '../../components/DashboardExtActivity';
 import DashboardInterest from '../../components/DashboardInterest';
+import DashboardClassSchedule from '../../components/DashboardClassSchedule/DashboardClassSchedule';
 
 
 class MentorDashboard extends Component {
@@ -42,6 +43,7 @@ class MentorDashboard extends Component {
                         {/* TODO: exp and education */}
                         <DashboardExtActivity extActivity={profile.ext_activities} />
                         <DashboardInterest interest={profile.interests} />
+                        <DashboardClassSchedule schedule={profile.class_schedule} />
                         <div style={{ marginBottom: '60px' }} />
                         {/* <button onClick={this.onDeleteClick.bind(this)} className="btn btn-danger">Delete My Account</button> */}
                     </div>

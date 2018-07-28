@@ -20,9 +20,11 @@ import MentorDashboard from './Pages/MentorDashboard';
 import MentorProfile from './Pages/MentorProfile';
 import AddExtActivity from './Pages/AddInfo/AddExtActivity';
 import AddInterest from './Pages/AddInfo/AddInterest';
+
 import { logoutUser } from './actions/authActions';
 import { clearCurrentProfile } from './actions/profileActions';
 import CreateProfile from './Pages/CreateProfile';
+import AddClass from './Pages/AddInfo/AddClass';
 
 
 // import Mentor from './Pages/Mentor'
@@ -88,6 +90,9 @@ class App extends Component {
                 </Switch>
                 <Switch>
                   <PrivateRoute exact path="/add-interest" component={ AddInterest } />                     
+                </Switch>
+                <Switch>
+                  <PrivateRoute exact path="/add-class" component={ AddClass } />                     
                 </Switch>
               </div>
               {/*<Route exact path="/Mentor" component={Mentor}/>

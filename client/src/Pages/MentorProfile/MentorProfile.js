@@ -7,6 +7,7 @@ import Spinner from '../../components/Spinner';
 import calendar from '../../assets/img/calendar.png';
 import ExtraCurricularActivities from '../../components/ExtraCurricularActivities/ExtraCurricularActivities';
 import Interests from '../../components/Interests/Interests';
+import ClassSchedule from '../../components/ClassSchedule/ClassSchedule';
 
 class MentorProfile extends Component {
     componentDidMount() {
@@ -64,72 +65,10 @@ class MentorProfile extends Component {
                             </div>
             
                             <div className="mt-4">
-                                <div className="card">
-                                    <div className="card-header">
-                                        Schedule
-                                    </div>
-                                    <div className="card-body">
-                                        <table className="table table-sm">
-                                            {/* <!--Table Head--> */}
-                                            <thead className="thead-light">
-                                                <tr>
-                                                    <th>Period</th>
-                                                    <th>className</th>
-                                                    <th>Room #</th>
-                                                </tr>
-                                            </thead>
-                                            {/* <!-- End Table Head -->
-                                            <!-- Table Body --> */}
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>P.E.</td>
-                                                    <td>1</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Math</td>
-                                                    <td>247</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>History</td>
-                                                    <td>214</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">4</th>
-                                                    <td>Lunch</td>
-                                                    <td>Cafe</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">5</th>
-                                                    <td>Biology</td>
-                                                    <td>174</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">6</th>
-                                                    <td>English</td>
-                                                    <td>108</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">7</th>
-                                                    <td>Art</td>
-                                                    <td>47</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">8</th>
-                                                    <td>Resource</td>
-                                                    <td>116</td>
-                                                </tr>
-                                            </tbody>
-                                            {/* <!-- End Table Body --> */}
-                                        </table>
-                                        {/* <!-- End Table --> */}
-                                    </div>
-                                </div>
+                                <ClassSchedule profile={profile}/>
                                 <div className="card mt-4 mb-4">
                                     <div className="card-header">
-                                        Calendar
+                                        Calendar (Coming Soon...)
                                     </div>
                                     <div className="card-body">
                                         <img src={calendar} alt="student calendar" width="100%" />

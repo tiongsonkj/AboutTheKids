@@ -35,6 +35,19 @@ const ProfileSchema = new Schema({
             },
         }
     ],
+    class_schedule: [
+        {
+            period: {
+                type: String
+            },
+            class_name: {
+                type: String
+            },
+            room_number: {
+                type: String
+            }
+        }
+    ],
     date: {
         type: Date,
         default: Date.now

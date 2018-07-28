@@ -191,4 +191,53 @@ router.delete('/interests/:interest_index', passport.authenticate('jwt', { sessi
         })
 });
 
+// @route POST request to api/profile/class_schedule
+// @desc  add classes to their schedule
+// @access Private because we need actual user who is submitting the form
+router.post('/class_schedule', passport.authenticate('jwt', { session: false }), (req, res) => {
+    // bring in validation/experience function
+    // const { errors, isValid } = validateExperienceInput(req.body);
+
+    // // check validation
+    // if(!isValid) {
+    //     // return any errors with 400 status
+    //     return res.status(400).json(errors);
+    // }
+
+    // console.log(req.body);
+    Profile.findOne({ mentor: req.user._id })
+        .then(profile => {
+            // console.log(req.body);
+            // console.log(profile);
+            const newClass = {
+                period: req.body.period,
+                class_name: req.body.class_name,
+                room_number: req.body.room_number
+            }
+            // console.log(newClass);
+            profile.class_schedule.unshift(newClass);
+            // console.log(profile.class_schedule);
+            
+            const newSortedArray = profile.class_schedule.sort(compareClasses);
+            console.log("newSortedArray");
+            console.log(newSortedArray);
+
+            profile.save().then(profile => res.json(profile));
+        })
+});
+
+// function to sort classes array
+function compareClasses(a, b) {
+    // Use toUpperCase() to ignore character casing
+    const periodA = a.period;
+    const periodB = b.period;
+    
+    let comparison = 0;
+    if (periodA > periodB) {
+        comparison = 1;
+    } else if (periodA < periodB) {
+        comparison = -1;
+    }
+    return comparison;
+}
 module.exports = router;
