@@ -6,6 +6,8 @@ import { getCurrentMentor, getCurrentProfile } from '../../actions/profileAction
 import Spinner from '../../components/Spinner';
 import MentorProfileActions from './MentorProfileActions'; 
 import DashboardExtActivity from '../../components/DashboardExtActivity';
+import DashboardInterest from '../../components/DashboardInterest';
+
 
 class MentorDashboard extends Component {
     componentDidMount() {
@@ -37,9 +39,9 @@ class MentorDashboard extends Component {
                             Welcome <Link to ="/mentorprofile">{ currentMentor.first_name }</Link>
                         </p>            
                         <MentorProfileActions />
-                        TODO: exp and education
+                        {/* TODO: exp and education */}
                         <DashboardExtActivity extActivity={profile.ext_activities} />
-                        {/* <Education education={profile.education} /> */}
+                        <DashboardInterest interest={profile.interests} />
                         <div style={{ marginBottom: '60px' }} />
                         {/* <button onClick={this.onDeleteClick.bind(this)} className="btn btn-danger">Delete My Account</button> */}
                     </div>

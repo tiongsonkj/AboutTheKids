@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getCurrentProfile, getCurrentMentor } from '../../actions/profileActions';
 import Spinner from '../../components/Spinner';
 import calendar from '../../assets/img/calendar.png';
+import ExtraCurricularActivities from '../../components/ExtraCurricularActivities/ExtraCurricularActivities';
 import Interests from '../../components/Interests/Interests';
 
 class MentorProfile extends Component {
@@ -18,15 +19,9 @@ class MentorProfile extends Component {
         const { mentor } = this.props.auth;
         const currentMentor = this.props.profile.mentor;
         const { profile, loading } = this.props.profile;
-        console.log(profile);
-        // console.log(profile.ext_activities);
-       
+
         // initialize dashboard content variable
         let dashboardContent;
-
-        // const listOfExtActivities = profile.ext_activities.map(activity => (
-        //     <li className="list-group-item p-1">{activity}</li>   
-        // ));
 
         // if profile is null or loading is true (looking at initial state in profile reducer)
         if(profile === null || loading) {
@@ -143,7 +138,7 @@ class MentorProfile extends Component {
                             </div>
                         </div>
             
-                        {/* // <!-- Mentor Interests --> */}
+                        {/* // <!-- Right side of profile --> */}
                         <div className="col-lg-6">
                             {/* <!-- Assigned Students --> */}
                             <div className="card">
@@ -197,7 +192,7 @@ class MentorProfile extends Component {
                             <div className="card mt-4">
                                 <div className="card-header">
                                     Bio
-                                    <a href="#" className="float-right btn-sm p-0">
+                                    <a href="" className="float-right btn-sm p-0">
                                         <i className="far fa-edit"></i>
                                     </a>
                                 </div>
@@ -206,25 +201,11 @@ class MentorProfile extends Component {
                                 </div>
                             </div>
             
+                            {/* <!-- ExtraCurricularActivities --> */}
+                            <ExtraCurricularActivities profile={profile}/>
+            
                             {/* <!-- Interests --> */}
                             <Interests profile={profile}/>
-            
-                            {/* <!-- Extracurricular --> */}
-                            <div className="card my-4">
-                                <div className="card-header">
-                                    Extracurricular Activities
-                                    <a href="#" className="float-right btn-sm p-0">
-                                        <i className="far fa-edit"></i>
-                                    </a>
-                                </div>
-                                <div className="card-body">
-                                    <ul className="list-group list-group-flush">
-                                        <li className="list-group-item p-1">Bicycling</li>
-                                        <li className="list-group-item p-1">Karate</li>
-                                        <li className="list-group-item p-1">Fishing</li>
-                                    </ul>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 )       

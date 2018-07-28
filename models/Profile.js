@@ -12,7 +12,7 @@ const ProfileSchema = new Schema({
         required: true
     },
     interests: {
-        type: String,
+        type: [String],
         required: true
     },
     ext_activities: {

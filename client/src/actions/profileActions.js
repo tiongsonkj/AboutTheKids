@@ -84,6 +84,38 @@ export const deleteActivity = (index) => dispatch => {
         ); 
 };
 
+// add interest
+// LEARNING LESSON: HAVE TO PASS IN AS AN OBJECT
+export const addInterest = (interestData, history) => dispatch => {
+    axios.post('/api/profile/interests', {
+        interest: interestData
+    }).then(res => {
+        history.push('/mentordashboard')
+    }).catch(err => 
+        dispatch({
+            type: GET_ERRORS,
+            payload: err.response.data
+        })
+    ); 
+};
+
+// delete interest
+export const deleteInterest = (index) => dispatch => {
+    axios.delete(`/api/profile/interests/${index}`)
+        .then(res => 
+            dispatch({
+                type: GET_PROFILE,
+                payload: res.data //when we delete experience we get profile back without that deleted experience
+            })
+        )
+        .catch(err => 
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+            })
+        ); 
+};
+
 // Profile loading. This lets reducer know its loading
 export const setProfileLoading = () => {
     return {

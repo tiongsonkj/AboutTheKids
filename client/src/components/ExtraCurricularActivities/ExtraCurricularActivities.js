@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import isEmpty from '../../validation/is-empty';
 
-class Interests extends Component {
+class ExtraCurricularActivities extends Component {
     render() {
         // this is loading in from Mentor Profile
         const { profile } = this.props;
         console.log(profile);
-        const listOfInterests = profile.interests.map((interest, index) => (
-            <li key={index} className="list-group-item p-1">{interest}</li>
+        const listOfExtActivities = profile.ext_activities.map((activity, index) => (
+            <li key={index} className="list-group-item p-1">{activity}</li>
         ))
         return (
             <div className="card mt-4">
@@ -21,7 +21,7 @@ class Interests extends Component {
                 <div className="card-body">
                     <ul className="list-group list-group-flush">
                         {/* need to use span, if I didn't use span there would be an error */}
-                        {isEmpty(profile.interests) ? (<span>Please add an interest!</span>) : (<span>{listOfInterests}</span>)}
+                        {isEmpty(profile.ext_activities) ? (<span>Please add an extracurricular activity!</span>) : (<span>{listOfExtActivities}</span>)}
                     </ul>
                 </div>
             </div>
@@ -29,8 +29,8 @@ class Interests extends Component {
     }
 }
 
-Interests.propTypes = {
+ExtraCurricularActivities.propTypes = {
     profile: PropTypes.object.isRequired
 }
 
-export default Interests;
+export default ExtraCurricularActivities;

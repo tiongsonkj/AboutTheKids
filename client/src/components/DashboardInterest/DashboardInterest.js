@@ -2,32 +2,33 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 //import { withRouter } from 'react-router-dom'; //need this because we need action to delete experience and then redirect to dashboard
-import { deleteActivity } from '../../actions/profileActions';
+import { deleteInterest } from '../../actions/profileActions';
 
-class DashboardExtActivity extends Component {
+class DashboardInterest extends Component {
     onDeleteClick(index) {
-        // bring in deleteActivity() prop from below
-        this.props.deleteActivity(index);
+        // bring in deleteInterest() prop from below
+        this.props.deleteInterest(index);
     }
 
     render() {
-        const extActivity = this.props.extActivity.map((activity, index) => (
+        // this.props.interest is coming in from where this component will be used which is in MentorDashboard
+        const interests = this.props.interest.map((interest, index) => (
             <tr key={index}>
-                <td>{activity}</td>
+                <td>{interest}</td>
                 <td><button onClick={this.onDeleteClick.bind(this, index)} className="btn btn-danger">Delete</button></td>
             </tr>
         ));
         return (
         <div>
-            <h4 className="mb-4">Extra-Curricular Activities</h4>
+            <h4 className="mb-4">Interests</h4>
             <hr />
             <table className="table">
                 <thead>
                     <tr>
-                        <th>Extra-Curricular Activity</th>
+                        <th>Interest</th>
                         <th></th>
                     </tr>
-                    {extActivity}
+                    {interests}
                 </thead>
             </table>
         </div>
@@ -36,8 +37,8 @@ class DashboardExtActivity extends Component {
 };
 
 // adding delete Activity as a proptype
-DashboardExtActivity.propTypes = {
-    deleteActivity: PropTypes.func.isRequired
+DashboardInterest.propTypes = {
+    deleteInterest: PropTypes.func.isRequired
 }
 
-export default connect(null, { deleteActivity })(DashboardExtActivity);
+export default connect(null, { deleteInterest })(DashboardInterest);

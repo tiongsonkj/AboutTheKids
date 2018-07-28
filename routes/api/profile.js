@@ -145,4 +145,50 @@ router.delete('/extactivity/:extact_index', passport.authenticate('jwt', { sessi
         })
 });
 
+// @route POST request to api/profile/interests
+// @desc  add interest to profile
+// @access Private because we need actual user who is submitting the form
+router.post('/interests', passport.authenticate('jwt', { session: false }), (req, res) => {
+    // bring in validation/experience function
+    // const { errors, isValid } = validateExperienceInput(req.body);
+
+    // // check validation
+    // if(!isValid) {
+    //     // return any errors with 400 status
+    //     return res.status(400).json(errors);
+    // }
+
+    // console.log(req.body);
+    Profile.findOne({ mentor: req.user._id })
+        .then(profile => {
+            // console.log(req.body);
+            const newInterest = req.body.interest;
+            
+            //  add to exp array
+            // unshift adds to front of array
+            profile.interests.unshift(newInterest);
+
+            profile.save().then(profile => res.json(profile));
+        })
+});
+
+// @route DELETE request to api/profile/interests
+// @desc  delete interest from profile
+// @access Private because we need actual user who is submitting the form
+router.delete('/interests/:interest_index', passport.authenticate('jwt', { session: false }), (req, res) => {
+    
+    Profile.findOne({ mentor: req.user._id })
+        .then(profile => {
+            // loop through the profile array
+            for(var i = 0; i < profile.interests.length; i++) {
+                // if the element at req.params.interest_index matches the loop index, then splice that element out
+                if(profile.interests[req.params.interest_index] == profile.interests[i]) {
+                    profile.interests.splice(req.params.interest_index, 1);
+                }
+            }
+            // save new profile
+            profile.save().then(profile => res.json(profile));
+        })
+});
+
 module.exports = router;
