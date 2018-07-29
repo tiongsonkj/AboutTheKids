@@ -20,7 +20,6 @@ const Mentor = require('../../models/Mentor');
 router.post("/register", (req, res) => {
      // pull out errors and isvalid from function we just brought in
      const { errors, isValid } = validateRegisterInput(req.body);
-     console.log(req.body);
 
     // check validation
     if(!isValid) {
@@ -97,9 +96,6 @@ router.post('/login', (req, res) => {
 
     Mentor.findOne({email})
         .then(mentor => {
-            console.log(email);
-            console.log(password);
-            console.log(typeof password);
 
             if(!mentor) {
                 return res.status(404).json({error: "Mentor not found"});

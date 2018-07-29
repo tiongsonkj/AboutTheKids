@@ -36,7 +36,6 @@ class MentorForm extends Component {
     componentWillReceiveProps(nextProps) { 
         //checking for errors in errorsProp
         // errors will now be in state
-        console.log(nextProps);
         if(nextProps.errors) {
             this.setState({errors: nextProps.errors.errors}) 
             //.errors.errors because for some reason the errors object is within another set of brackets
@@ -63,7 +62,7 @@ class MentorForm extends Component {
         this.props.registerUser(newMentor, this.props.history);
 
         // can check this object in console        
-        console.log(newMentor);
+        // console.log(newMentor);
     }
 
     onChange(event){
@@ -78,8 +77,6 @@ class MentorForm extends Component {
 
     render() {
         const { errors } = this.state; 
-        console.log(this.props);
-        console.log(this.state);
         return (
             <div className="register">
                 <Nav />

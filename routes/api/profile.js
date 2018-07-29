@@ -112,10 +112,8 @@ router.post('/extactivity', passport.authenticate('jwt', { session: false }), (r
     //     return res.status(400).json(errors);
     // }
 
-    // console.log(req.body);
     Profile.findOne({ mentor: req.user._id })
         .then(profile => {
-            // console.log(req.body);
             const newExtActivity = req.body.activity;
             
             //  add to exp array
@@ -158,10 +156,8 @@ router.post('/interests', passport.authenticate('jwt', { session: false }), (req
     //     return res.status(400).json(errors);
     // }
 
-    // console.log(req.body);
     Profile.findOne({ mentor: req.user._id })
         .then(profile => {
-            // console.log(req.body);
             const newInterest = req.body.interest;
             
             //  add to exp array
@@ -204,19 +200,14 @@ router.post('/class_schedule', passport.authenticate('jwt', { session: false }),
     //     return res.status(400).json(errors);
     // }
 
-    // console.log(req.body);
     Profile.findOne({ mentor: req.user._id })
         .then(profile => {
-            // console.log(req.body);
-            // console.log(profile);
             const newClass = {
                 period: req.body.period,
                 class_name: req.body.class_name,
                 room_number: req.body.room_number
             }
-            // console.log(newClass);
             profile.class_schedule.unshift(newClass);
-            // console.log(profile.class_schedule);
             
             const newSortedArray = profile.class_schedule.sort(compareClasses);
             console.log("newSortedArray");

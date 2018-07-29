@@ -67,7 +67,6 @@ class Login extends Component {
     // NEED TO FIX THIS PAGE, IF EMAIL DOES NOT EXIST IN DB THEN NEED TO CREATE ERROR
     render() {
         const { errors } = this.state;
-        console.log(errors);
 
         return (
         <div className="login">

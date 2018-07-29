@@ -54,8 +54,6 @@ class CreateProfile extends Component {
     
     render() {
         // const { errors } = this.state;
-        console.log(this.props);
-        console.log(this.state);
 
         return (
             <div className="create-profile">

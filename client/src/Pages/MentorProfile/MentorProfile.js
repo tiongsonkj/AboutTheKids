@@ -16,7 +16,6 @@ class MentorProfile extends Component {
     }
 
     render() {
-        console.log(this.props);
         const { mentor } = this.props.auth;
         const currentMentor = this.props.profile.mentor;
         const { profile, loading } = this.props.profile;
