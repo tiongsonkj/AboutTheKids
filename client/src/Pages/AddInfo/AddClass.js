@@ -9,7 +9,7 @@ class AddClass extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            period: '1',
+            period: '',
             class_name: '',
             room_number: '',
             errors: {},
@@ -21,6 +21,7 @@ class AddClass extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
+        console.log(nextProps);
         if(nextProps.errors) {
             this.setState({ errors: nextProps.errors });
         }
@@ -63,7 +64,17 @@ class AddClass extends Component {
                             <form onSubmit={this.onSubmit}>
                                 <div className="form-group">
                                     <label htmlFor="periodgroup">Period</label>
-                                    <select name="period" className="form-control" id="periodgroup" value={this.state.period} onChange={this.onChange}>
+                                    <select 
+                                        name="period" 
+                                        className="form-control" 
+                                        className={classnames('form-control form-control-lg', {
+                                            'is-invalid': errors.period
+                                        })}
+                                        id="periodgroup" 
+                                        value={this.state.period} 
+                                        onChange={this.onChange}
+                                    >
+                                        <option>Please select an option...</option>
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -73,26 +84,39 @@ class AddClass extends Component {
                                         <option>7</option>
                                         <option>8</option>
                                     </select>
+                                    {errors.period && (
+                                        <div className="invalid-feedback">{errors.period}</div>
+                                    )}
                                 </div>
+                                <div className="form-group">
+                                    <input 
+                                        className={classnames('form-control form-control-lg', {
+                                            'is-invalid': errors.class_name
+                                        })}  
+                                        placeholder="* Class Name" 
+                                        name="class_name"
+                                        value={this.state.class_name}
+                                        onChange={this.onChange}
+                                        //required //this is html required checkin. but we will not need it because we will have our own checkin
+                                    />
+                                    {errors.class_name && (
+                                        <div className="invalid-feedback">{errors.class_name}</div>
+                                    )}
+                                </div>
+                                
                                 <input 
-                                    className={classnames('form-control form-control-lg'
-                                        
-                                    )} 
-                                    placeholder="* Class Name" 
-                                    name="class_name"
-                                    value={this.state.class_name}
-                                    onChange={this.onChange}
-                                    //required //this is html required checkin. but we will not need it because we will have our own checkin
-                                />
-                                <input 
-                                    className={classnames('form-control form-control-lg'
-                                        
-                                    )} 
+                                    className={classnames('form-control form-control-lg', {
+                                        'is-invalid': errors.room_number
+                                    })} 
                                     placeholder="* Room Number" 
                                     name="room_number"
                                     value={this.state.room_number}
                                     onChange={this.onChange}
                                 />
+                                {errors.room_number && (
+                                    <div className="invalid-feedback">{errors.room_number}</div>
+                                )}
+                                
                                 {/* {info && <small className="form-text text-muted">{info}</small>} */}
                         
                                 {/* never seen this before but from what it does (he said it was javascript syntax), if theres errors.name, then in parenthesis include that div. This is what gives me the small red feedback of the error */}

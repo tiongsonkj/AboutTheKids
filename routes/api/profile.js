@@ -6,6 +6,7 @@ const passport = require('passport');
 
 // load validation
 const validateProfileInput = require('../../validation/profile');
+const validateClassScheduleInput = require('../../validation/class_schedule');
 // const validateExperienceInput = require('../../validation/experience');
 // const validateEducationInput = require('../../validation/education');
 
@@ -192,13 +193,14 @@ router.delete('/interests/:interest_index', passport.authenticate('jwt', { sessi
 // @access Private because we need actual user who is submitting the form
 router.post('/class_schedule', passport.authenticate('jwt', { session: false }), (req, res) => {
     // bring in validation/experience function
-    // const { errors, isValid } = validateExperienceInput(req.body);
-
+    const { errors, isValid } = validateClassScheduleInput(req.body);
+    console.log(errors);
+    
     // // check validation
-    // if(!isValid) {
-    //     // return any errors with 400 status
-    //     return res.status(400).json(errors);
-    // }
+    if(!isValid) {
+        // return any errors with 400 status
+        return res.status(400).json(errors);
+    }
 
     Profile.findOne({ mentor: req.user._id })
         .then(profile => {
