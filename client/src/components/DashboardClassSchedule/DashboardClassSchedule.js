@@ -2,21 +2,21 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 //import { withRouter } from 'react-router-dom'; //need this because we need action to delete experience and then redirect to dashboard
-import { deleteActivity } from '../../actions/profileActions';
+import { deleteClassSchedule } from '../../actions/profileActions';
 
 class DashboardClassSchedule extends Component {
-    onDeleteClick(index) {
+    onDeleteClick(id) {
         // bring in deleteActivity() prop from below
-        this.props.deleteActivity(index);
+        this.props.deleteClassSchedule(id);
     }
 
     render() {
-        const classSchedule = this.props.schedule.map((specific_class, index) => (
-            <tr key={index}>
+        const classSchedule = this.props.schedule.map((specific_class) => (
+            <tr key={specific_class._id}>
                 <td>{specific_class.period}</td>
                 <td>{specific_class.class_name}</td>
                 <td>{specific_class.room_number}</td>
-                <td><button onClick={this.onDeleteClick.bind(this, index)} className="btn btn-danger">Delete</button></td>
+                <td><button onClick={this.onDeleteClick.bind(this, specific_class._id)} className="btn btn-danger">Delete</button></td>
             </tr>
         ));
         return (
@@ -40,7 +40,7 @@ class DashboardClassSchedule extends Component {
 
 // adding delete Activity as a proptype
 DashboardClassSchedule.propTypes = {
-    deleteActivity: PropTypes.func.isRequired
+    deleteClassSchedule: PropTypes.func.isRequired
 }
 
-export default connect(null, { deleteActivity })(DashboardClassSchedule);
+export default connect(null, { deleteClassSchedule })(DashboardClassSchedule);

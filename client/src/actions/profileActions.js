@@ -130,6 +130,23 @@ export const addClass = (classData, history) => dispatch => {
         ); 
 };
 
+// delete interest
+export const deleteClassSchedule = (id) => dispatch => {
+    axios.delete(`/api/profile/class_schedule/${id}`)
+        .then(res => 
+            dispatch({
+                type: GET_PROFILE,
+                payload: res.data //when we delete experience we get profile back without that deleted experience
+            })
+        )
+        .catch(err => 
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+            })
+        ); 
+};
+
 // Profile loading. This lets reducer know its loading
 export const setProfileLoading = () => {
     return {

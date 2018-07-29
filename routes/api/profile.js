@@ -217,6 +217,29 @@ router.post('/class_schedule', passport.authenticate('jwt', { session: false }),
         })
 });
 
+// @route DELETE request to api/profile/class_schedule/:class_id
+// @desc  delete class schedule from profile
+// @access Private because we need actual user who is submitting the form
+router.delete('/class_schedule/:class_id', passport.authenticate('jwt', { session: false }), (req, res) => {
+    
+    Profile.findOne({ mentor: req.user._id })
+        .then(profile => {
+
+            let removeIndex;
+            profile.class_schedule.map(item => {
+                if(req.params.class_id == item._id) {
+                    removeIndex = profile.class_schedule.map(item => item._id).indexOf(item._id);
+                }    
+            })
+
+            // remove that object out of the array
+            profile.class_schedule.splice(removeIndex, 1);
+            
+            // save new profile
+            profile.save().then(profile => res.json(profile));
+        })
+});
+
 // function to sort classes array
 function compareClasses(a, b) {
     // Use toUpperCase() to ignore character casing
