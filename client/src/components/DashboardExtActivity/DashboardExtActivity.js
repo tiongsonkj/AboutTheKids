@@ -12,25 +12,23 @@ class DashboardExtActivity extends Component {
 
     render() {
         const extActivity = this.props.extActivity.map((activity, index) => (
-            <tr key={index}>
-                <td>{activity}</td>
-                <td><button onClick={this.onDeleteClick.bind(this, index)} className="btn btn-danger">Delete</button></td>
-            </tr>
+            <div key={index} className="row pt-3 justify-content-between">
+                <div style={{ display: 'flex' }}>{activity}</div>
+                <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                    <button onClick={this.onDeleteClick.bind(this, index)} className="btn btn-danger">
+                        Delete
+                    </button>
+                </div>
+            </div>
         ));
         return (
-        <div>
-            <h4 className="mb-4">Extra-Curricular Activities</h4>
-            <hr />
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th>Extra-Curricular Activity</th>
-                        <th></th>
-                    </tr>
-                    {extActivity}
-                </thead>
-            </table>
-        </div>
+            <div>
+                <h4 className="mb-4">Extra-Curricular Activities</h4>
+                <div className="row" style={{ borderBottom: '1px dotted grey'}}>
+                    
+                </div>
+                {extActivity}
+            </div>
         )
     }
 };

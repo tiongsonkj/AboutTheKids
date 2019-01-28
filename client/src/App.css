@@ -36,10 +36,13 @@ h6 {
   color: #3c3c3c; }
 
 body {
-  background: linear-gradient(to bottom, aliceblue, #9292a0); }
+  background-color: aliceblue;
+  /* background: linear-gradient(to bottom, aliceblue, #9292a0);  */
+}
 
 html {
-  background: linear-gradient(to bottom, aliceblue, #9292a0); }
+  /* background: linear-gradient(to bottom, aliceblue, #9292a0);  */
+}
 
 /*** END Global Values ***/
 /*** Navbar ***/

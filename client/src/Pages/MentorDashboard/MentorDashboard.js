@@ -24,6 +24,8 @@ class MentorDashboard extends Component {
         const { user } = this.props.auth;
         const { profile, loading } = this.props.profile;
         const currentMentor = this.props.profile.mentor;
+        console.log(this.props);
+        console.log(currentMentor);
 
         // initialize dashboard content variable
         let mentorDashboardContent;
@@ -37,7 +39,10 @@ class MentorDashboard extends Component {
                 mentorDashboardContent = (
                     <div>
                         <p className="lead text-muted">
-                            Welcome <Link to ="/mentorprofile">{ currentMentor.first_name }</Link>
+                            Welcome 
+                            <Link to ="/mentorprofile">
+                                {loading ? ' Mentor' : ' '+currentMentor.first_name}
+                            </Link>
                         </p>            
                         <MentorProfileActions />
                         {/* TODO: exp and education */}

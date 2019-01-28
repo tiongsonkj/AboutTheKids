@@ -12,27 +12,24 @@ class DashboardClassSchedule extends Component {
 
     render() {
         const classSchedule = this.props.schedule.map((specific_class) => (
-            <tr key={specific_class._id}>
-                <td>{specific_class.period}</td>
-                <td>{specific_class.class_name}</td>
-                <td>{specific_class.room_number}</td>
-                <td><button onClick={this.onDeleteClick.bind(this, specific_class._id)} className="btn btn-danger">Delete</button></td>
-            </tr>
+            <div key={specific_class._id} className="row pt-3 justify-content-between">
+                <div style={{ display: 'flex', width: '25%' }}>{specific_class.period}</div>
+                <div style={{ display: 'flex', width: '25%' }}>{specific_class.class_name}</div>
+                <div style={{ width: '25%' }}>{specific_class.room_number}</div>                        
+                <div style={{ display: 'flex', justifyContent: 'flex-end', width: '25%' }}>
+                    <button onClick={this.onDeleteClick.bind(this, specific_class._id)} className="btn btn-danger">
+                        Delete
+                    </button>
+                </div>
+            </div>
         ));
         return (
         <div>
             <h4 className="mb-4">Class Schedule</h4>
-            <hr />
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th>Period</th>
-                        <th>Class Name</th>
-                        <th>Room #</th>
-                    </tr>
-                    {classSchedule}
-                </thead>
-            </table>
+            <div className="row" style={{ borderBottom: '1px dotted grey' }}>
+                
+            </div>
+            {classSchedule}
         </div>
         )
     }

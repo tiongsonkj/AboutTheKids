@@ -13,24 +13,22 @@ class DashboardInterest extends Component {
     render() {
         // this.props.interest is coming in from where this component will be used which is in MentorDashboard
         const interests = this.props.interest.map((interest, index) => (
-            <tr key={index}>
-                <td>{interest}</td>
-                <td><button onClick={this.onDeleteClick.bind(this, index)} className="btn btn-danger">Delete</button></td>
-            </tr>
+            <div key={index} className="row pt-3 justify-content-between">
+                <div style={{ display: 'flex' }}>{interest}</div>
+                <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                    <button onClick={this.onDeleteClick.bind(this, index)} className="btn btn-danger">
+                        Delete
+                    </button>
+                </div>
+            </div>
         ));
         return (
         <div>
-            <h4 className="mb-4">Interests</h4>
-            <hr />
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th>Interest</th>
-                        <th></th>
-                    </tr>
-                    {interests}
-                </thead>
-            </table>
+            <h4 className="my-4" >Interests</h4>
+            <div className="row" style={{ borderBottom: '1px dotted grey'}}>
+               
+            </div>
+            {interests}
         </div>
         )
     }
